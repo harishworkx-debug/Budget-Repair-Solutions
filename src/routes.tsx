@@ -66,14 +66,15 @@ export function renderRoute(path: string): ReactNode {
       return <ContactPage />;
   }
 
+  const cleanRoute = route.slice(1);
+  const area = findServiceAreaBySlug(cleanRoute);
+  if (area) return <AreaDetailPage area={area} />;
+
   if (route.endsWith(LOCATION_SUFFIX)) {
     const serviceSlug = route.slice(1, route.length - LOCATION_SUFFIX.length);
     const service = findServiceBySlug(serviceSlug);
     if (service) return <ServiceDetailPage service={service} />;
   }
-
-  const area = findServiceAreaBySlug(route.slice(1));
-  if (area) return <AreaDetailPage area={area} />;
 
   return <NotFoundPage />;
 }

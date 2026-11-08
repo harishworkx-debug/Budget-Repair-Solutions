@@ -70,7 +70,7 @@ export function SiteFooter() {
             {SERVICE_AREAS.map((area) => (
               <li key={area.slug}>
                 <Link to={`/${area.slug}`} className="transition hover:text-white">
-                  HVAC Service in {area.city}, {BUSINESS.region}
+                  AC Repair in {area.city}, {BUSINESS.region}
                 </Link>
               </li>
             ))}

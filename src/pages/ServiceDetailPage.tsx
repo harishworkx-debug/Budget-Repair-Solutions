@@ -138,7 +138,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
             <p className="mt-10 text-sm text-slate-600">
               Serving {area.city}, {BUSINESS.region}:{' '}
               <Link to={`/${area.slug}`} className="font-semibold text-navy-800 underline-offset-4 hover:underline">
-                view our HVAC service area page
+                view our {area.city} AC repair & service area page
               </Link>
               .
             </p>

@@ -2,6 +2,7 @@ import { BUSINESS } from '@/config/business';
 
 export interface ServiceArea {
   slug: string;
+  citySlug: string;
   city: string;
   intro: string[];
   customerNeeds: string[];
@@ -10,7 +11,8 @@ export interface ServiceArea {
 
 export const SERVICE_AREAS: ServiceArea[] = [
   {
-    slug: BUSINESS.locationSlug,
+    slug: `ac-repair-${BUSINESS.locationSlug}`,
+    citySlug: BUSINESS.locationSlug,
     city: BUSINESS.city,
     intro: [
       `${BUSINESS.city} is the county seat of Gwinnett County, with a mix of older single-family neighborhoods, newer subdivisions, townhomes, and small businesses. Homes and buildings here see long, humid summers and cold snaps in winter, which puts steady demand on both cooling and heating equipment.`,
@@ -24,6 +26,10 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     faqs: [
       {
+        question: 'Do you provide emergency AC repair in Lawrenceville?',
+        answer: 'Yes. Call our office directly with your address and issue so our technicians can prioritize prompt diagnosis and repair.',
+      },
+      {
         question: 'Do you serve my specific neighborhood in Lawrenceville?',
         answer: 'Call the office with your address and the service you need. The team can confirm coverage before a visit is scheduled.',
       },
@@ -34,7 +40,8 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
   },
   {
-    slug: 'snellville-ga',
+    slug: 'ac-repair-snellville-ga',
+    citySlug: 'snellville-ga',
     city: 'Snellville',
     intro: [
       'Snellville sits in Gwinnett County and is known for its established residential streets, shopping corridors, and a steady flow of family homes. Many of these homes were built decades apart, so the heating and cooling systems in them vary widely in age and design.',
@@ -58,7 +65,8 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
   },
   {
-    slug: 'lilburn-ga',
+    slug: 'ac-repair-lilburn-ga',
+    citySlug: 'lilburn-ga',
     city: 'Lilburn',
     intro: [
       'Lilburn is a Gwinnett County community with tree-lined neighborhoods and a mix of ranch homes and two-story houses. Shaded yards and older ductwork in some homes can make airflow a common concern during the summer.',
@@ -82,7 +90,8 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
   },
   {
-    slug: 'duluth-ga',
+    slug: 'ac-repair-duluth-ga',
+    citySlug: 'duluth-ga',
     city: 'Duluth',
     intro: [
       'Duluth is a growing Gwinnett County city with busy commercial corridors, office buildings, and many newer homes. Both residential and light commercial properties here depend on reliable rooftop and split systems through hot and cold seasons.',
@@ -106,7 +115,8 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
   },
   {
-    slug: 'suwanee-ga',
+    slug: 'ac-repair-suwanee-ga',
+    citySlug: 'suwanee-ga',
     city: 'Suwanee',
     intro: [
       'Suwanee is a Gwinnett County city known for its parks, schools, and planned neighborhoods. Many homes here have larger floor plans, which means balanced airflow and correctly sized equipment matter more than simply having a unit that runs.',
@@ -130,7 +140,8 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
   },
   {
-    slug: 'loganville-ga',
+    slug: 'ac-repair-loganville-ga',
+    citySlug: 'loganville-ga',
     city: 'Loganville',
     intro: [
       'Loganville is a city in the Atlanta metro area with a small-town feel, older downtown buildings, and newer subdivisions on its outskirts. Homes here often have a mix of system ages, so a single visit can reveal both simple tune-up needs and components near the end of their life.',
@@ -154,7 +165,8 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
   },
   {
-    slug: 'grayson-ga',
+    slug: 'ac-repair-grayson-ga',
+    citySlug: 'grayson-ga',
     city: 'Grayson',
     intro: [
       'Grayson is a community in Gwinnett County with a mix of residential neighborhoods and nearby commercial centers. Homes in the area often range from newer builds to properties that have been updated over several decades.',
@@ -178,7 +190,8 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
   },
   {
-    slug: 'dacula-ga',
+    slug: 'ac-repair-dacula-ga',
+    citySlug: 'dacula-ga',
     city: 'Dacula',
     intro: [
       'Dacula is a Gwinnett County community with a rural edge, larger lots, and homes that often sit farther apart than in denser suburbs. Longer runs of ductwork and more exposed outdoor equipment are common here, which affects how systems perform.',
@@ -202,7 +215,8 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
   },
   {
-    slug: 'norcross-ga',
+    slug: 'ac-repair-norcross-ga',
+    citySlug: 'norcross-ga',
     city: 'Norcross',
     intro: [
       'Norcross is a Gwinnett County city with a historic downtown, busy business districts, and a wide range of residential and commercial buildings. Many of these properties rely on heating and cooling equipment that works hard year-round.',
@@ -226,7 +240,8 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
   },
   {
-    slug: 'atlanta-ga',
+    slug: 'ac-repair-atlanta-ga',
+    citySlug: 'atlanta-ga',
     city: 'Atlanta',
     intro: [
       'Atlanta is the state capital and one of the largest metro areas in the Southeast, with everything from historic homes to high-rise offices. Systems here vary enormously in age, size, and design, so every property needs an individual look.',
@@ -252,5 +267,11 @@ export const SERVICE_AREAS: ServiceArea[] = [
 ];
 
 export function findServiceAreaBySlug(slug: string) {
-  return SERVICE_AREAS.find((area) => area.slug === slug);
+  const normalized = slug.toLowerCase();
+  return SERVICE_AREAS.find(
+    (area) =>
+      area.slug === normalized ||
+      area.citySlug === normalized ||
+      `ac-repair-${area.citySlug}` === normalized
+  );
 }

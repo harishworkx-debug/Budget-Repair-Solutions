@@ -1,10 +1,13 @@
-import { ExternalLink, Phone, Star } from 'lucide-react';
+import { useState } from 'react';
+import { ExternalLink, MessageSquarePlus, Phone, Star } from 'lucide-react';
 import { BUSINESS, locationLabel, telHref } from '@/config/business';
 import { PageHeader } from '@/components/PageHeader';
 import { PhoneButton } from '@/components/PhoneButton';
 import { CallBand } from '@/components/CallBand';
 import { Link } from '@/lib/router';
 import { useSeo } from '@/lib/seo';
+import { GOOGLE_REVIEWS_SUMMARY, REVIEWS } from '@/data/reviews';
+import { ReviewCard, StarRating } from '@/components/ReviewCard';
 
 export function AboutPage() {
   useSeo({
@@ -95,18 +98,27 @@ export function AboutPage() {
 }
 
 export function ReviewsPage() {
+  const [filter, setFilter] = useState<'all' | 'positive' | 'negative' | 'punctuality'>('all');
+
   useSeo({
-    title: `Customer Reviews | ${BUSINESS.name}`,
-    description: `Read genuine customer reviews of ${BUSINESS.name} on Google, and call to talk with the team about your heating or cooling needs.`,
+    title: `Google Reviews (${GOOGLE_REVIEWS_SUMMARY.rating} Stars, 6 Reviews) | ${BUSINESS.name}`,
+    description: `Read genuine Google reviews for ${BUSINESS.name}. 3.7-star rating across 6 customer reviews in Lawrenceville, GA.`,
     path: '/reviews',
+  });
+
+  const filteredReviews = REVIEWS.filter((review) => {
+    if (filter === 'positive') return review.sentiment === 'positive';
+    if (filter === 'negative') return review.sentiment === 'negative';
+    if (filter === 'punctuality') return review.tags?.includes('Punctuality');
+    return true;
   });
 
   return (
     <>
       <PageHeader
-        eyebrow="Reviews"
-        title="What customers say about Budget Repair Solutions"
-        description="Our reviews are published on Google. Open our listing to read them in full and see the current rating and review count."
+        eyebrow="Customer Reviews"
+        title="Google Reviews for Budget Repair Solutions"
+        description="Read genuine, unedited customer reviews from our Google Maps profile. See what homeowners in Lawrenceville and Georgia have shared."
         crumbs={[{ label: 'Home', to: '/' }, { label: 'Reviews' }]}
         actions={
           <a
@@ -116,28 +128,137 @@ export function ReviewsPage() {
             className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 px-8 py-4 text-base font-bold text-white transition hover:border-white hover:bg-white/10"
           >
             <Star className="h-4 w-4 text-sky-300" aria-hidden="true" />
-            Read reviews on Google
+            Write a review on Google
           </a>
         }
       />
-      <section className="bg-white py-24">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-6 text-center">
-          <h2 className="text-3xl font-bold leading-tight text-navy-900">Read them on Google</h2>
-          <p className="text-base leading-relaxed text-slate-600">
-            We link directly to our Google Maps listing so you can read genuine reviews from customers, along with the current rating and total review count.
+
+      <section className="bg-slate-50 py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          {/* Summary Card */}
+          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm md:p-10">
+            <div className="grid gap-8 md:grid-cols-12 md:items-center">
+              {/* Overall Score */}
+              <div className="flex flex-col items-center border-b border-slate-100 pb-8 text-center md:col-span-4 md:border-b-0 md:border-r md:pb-0 md:pr-8">
+                <div className="flex items-center gap-2">
+                  <span className="text-5xl font-black text-navy-900">{GOOGLE_REVIEWS_SUMMARY.rating}</span>
+                  <span className="text-xl font-bold text-slate-400">/ 5</span>
+                </div>
+                <div className="mt-2">
+                  <StarRating rating={GOOGLE_REVIEWS_SUMMARY.rating} size="md" />
+                </div>
+                <p className="mt-2 text-sm font-semibold text-slate-600">
+                  Based on {GOOGLE_REVIEWS_SUMMARY.totalReviews} Google Reviews
+                </p>
+                <div className="mt-4 flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
+                  <span className="font-bold text-blue-600">G</span> Verified Google Profile
+                </div>
+              </div>
+
+              {/* Star Breakdown Bars */}
+              <div className="space-y-2 md:col-span-5">
+                {GOOGLE_REVIEWS_SUMMARY.breakdown.map((row) => (
+                  <div key={row.stars} className="flex items-center gap-3 text-xs">
+                    <span className="w-12 font-semibold text-slate-600">{row.stars} stars</span>
+                    <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-slate-100">
+                      <div
+                        className="h-full rounded-full bg-amber-400"
+                        style={{ width: `${row.percentage}%` }}
+                      />
+                    </div>
+                    <span className="w-8 text-right font-medium text-slate-500">{row.count}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Call to action */}
+              <div className="flex flex-col gap-3 md:col-span-3">
+                <a
+                  href={BUSINESS.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-navy-900 px-5 py-3 text-sm font-bold text-white transition hover:bg-navy-800"
+                >
+                  <MessageSquarePlus className="h-4 w-4" />
+                  Write a Review
+                </a>
+                <a
+                  href={BUSINESS.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+                >
+                  Open Google Maps
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Filter Tabs */}
+          <div className="mt-12 flex flex-wrap items-center gap-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-400 mr-2">Filter:</span>
+            <button
+              type="button"
+              onClick={() => setFilter('all')}
+              className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+                filter === 'all'
+                  ? 'bg-navy-900 text-white'
+                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
+              }`}
+            >
+              All ({REVIEWS.length})
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilter('positive')}
+              className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+                filter === 'positive'
+                  ? 'bg-emerald-700 text-white'
+                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
+              }`}
+            >
+              Positive (4)
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilter('negative')}
+              className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+                filter === 'negative'
+                  ? 'bg-rose-700 text-white'
+                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
+              }`}
+            >
+              Critical (2)
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilter('punctuality')}
+              className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+                filter === 'punctuality'
+                  ? 'bg-sky-700 text-white'
+                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
+              }`}
+            >
+              Punctuality (3)
+            </button>
+          </div>
+
+          {/* Reviews Grid */}
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {filteredReviews.map((review) => (
+              <ReviewCard key={review.id} review={review} />
+            ))}
+          </div>
+
+          {/* Bottom Note */}
+          <p className="mt-12 text-center text-xs text-slate-500">
+            Reviews shown above are authentic, unedited testimonials published by customers on our official Google Business profile.
           </p>
-          <a
-            href={BUSINESS.mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-navy-800 hover:text-sky-600"
-          >
-            Open the Google Maps listing
-            <ExternalLink className="h-4 w-4" aria-hidden="true" />
-          </a>
         </div>
       </section>
-      <CallBand />
+
+      <CallBand headline="Have questions about our HVAC service? Speak directly with our team." />
     </>
   );
 }

@@ -1,13 +1,15 @@
 import { ArrowRight, Thermometer } from 'lucide-react';
 import { BUSINESS, locationLabel } from '@/config/business';
-import { PageHeader } from '@/components/PageHeader';
 import { PhoneButton } from '@/components/PhoneButton';
 import { ServiceCard } from '@/components/ServiceCard';
+import { ServiceAreaFinder } from '@/components/ServiceAreaFinder';
 import { CallBand } from '@/components/CallBand';
 import { Link } from '@/lib/router';
 import { SERVICE_AREAS } from '@/data/areas';
 import { findServiceBySlug, serviceUrl, type Service } from '@/data/services';
 import { useSeo } from '@/lib/seo';
+import { GOOGLE_REVIEWS_SUMMARY, REVIEWS } from '@/data/reviews';
+import { ReviewCard, StarRating } from '@/components/ReviewCard';
 
 const HERO_IMAGE = 'https://images.pexels.com/photos/20046693/pexels-photo-20046693.jpeg?auto=compress&cs=tinysrgb&h=650&w=940';
 const COOLING_IMAGE = 'https://images.pexels.com/photos/16848596/pexels-photo-16848596.jpeg?auto=compress&cs=tinysrgb&h=650&w=940';
@@ -116,6 +118,10 @@ export function HomePage() {
               Explore HVAC Services
             </Link>
           </div>
+
+          <div className="mt-4 max-w-3xl">
+            <ServiceAreaFinder theme="dark" />
+          </div>
         </div>
       </section>
 
@@ -217,25 +223,43 @@ export function HomePage() {
       </section>
 
       <section className="bg-slate-50 py-24">
-        <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 px-6 text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-sky-600">Reviews</p>
-          <h2 className="text-3xl font-bold leading-tight text-navy-900 sm:text-4xl">See what customers say on Google</h2>
-          <p className="text-lg leading-relaxed text-slate-600">
-            Read genuine customer reviews on our Google Maps listing, where you can also find our current rating and review count.
-          </p>
-          <div className="flex flex-col gap-4 sm:flex-row">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto mb-14 max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-sky-600">Customer Feedback</p>
+            <h2 className="mt-3 text-3xl font-bold leading-tight text-navy-900 sm:text-4xl">
+              Real Reviews on Google Maps
+            </h2>
+            <div className="mt-4 flex items-center justify-center gap-3">
+              <span className="text-3xl font-black text-navy-900">{GOOGLE_REVIEWS_SUMMARY.rating}</span>
+              <StarRating rating={GOOGLE_REVIEWS_SUMMARY.rating} size="md" />
+              <span className="text-sm font-semibold text-slate-500">
+                ({GOOGLE_REVIEWS_SUMMARY.totalReviews} Google Reviews)
+              </span>
+            </div>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {REVIEWS.filter((r) => r.sentiment === 'positive').slice(0, 3).map((review) => (
+              <ReviewCard key={review.id} review={review} />
+            ))}
+          </div>
+
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              to="/reviews"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-navy-900 px-6 py-3 text-sm font-bold text-white transition hover:bg-navy-800"
+            >
+              View all {GOOGLE_REVIEWS_SUMMARY.totalReviews} Google Reviews
+              <ArrowRight className="h-4 w-4" />
+            </Link>
             <a
               href={BUSINESS.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-navy-200 bg-white px-6 py-3 text-sm font-bold text-navy-900 transition hover:border-navy-400 hover:bg-navy-50"
             >
-              Read reviews on Google
+              Read on Google Maps
             </a>
-            <Link to="/reviews" className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-navy-800 hover:text-sky-600">
-              Customer reviews page
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
           </div>
         </div>
       </section>
@@ -253,7 +277,7 @@ export function HomePage() {
                 to={`/${area.slug}`}
                 className="group flex items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg"
               >
-                <span className="text-lg font-bold text-navy-900">HVAC in {area.city}, {BUSINESS.region}</span>
+                <span className="text-lg font-bold text-navy-900">AC Repair in {area.city}, {BUSINESS.region}</span>
                 <ArrowRight className="h-5 w-5 shrink-0 text-navy-700 transition group-hover:translate-x-1" aria-hidden="true" />
               </Link>
             ))}
