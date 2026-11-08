@@ -1,8 +1,11 @@
-export const NAV_LINKS = [
+export interface NavLink {
+  label: string;
+  to: string;
+}
+
+export const NAV_LINKS: NavLink[] = [
   { label: 'Home', to: '/' },
-  { label: 'Air Conditioning', to: '/air-conditioning-services' },
-  { label: 'Heating', to: '/heating-services' },
-  { label: 'HVAC Services', to: '/hvac-services' },
+  { label: 'Services', to: '/hvac-services' },
   { label: 'Service Areas', to: '/service-areas' },
   { label: 'About', to: '/about' },
   { label: 'Reviews', to: '/reviews' },
