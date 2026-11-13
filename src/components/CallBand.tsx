@@ -1,16 +1,19 @@
 import { BUSINESS } from '@/config/business';
 import { PhoneButton } from '@/components/PhoneButton';
+import { Link } from '@/lib/router';
 
 interface CallBandProps {
   headline?: string;
   supporting?: string;
   label?: string;
+  showContactLink?: boolean;
 }
 
 export function CallBand({
   headline = 'Need HVAC Repair or Installation? Call Budget Repair Solutions.',
   supporting = 'Speak directly with Budget Repair Solutions about your heating and cooling needs.',
   label = 'Call Now',
+  showContactLink = true,
 }: CallBandProps) {
   return (
     <section className="bg-navy-900 py-20 text-white">
@@ -19,6 +22,14 @@ export function CallBand({
         <p className="max-w-2xl text-lg leading-relaxed text-white/80">{supporting}</p>
         <div className="flex flex-col items-center gap-4 sm:flex-row">
           <PhoneButton label={label} variant="primary" className="px-8 py-4 text-base" />
+          {showContactLink && (
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-4 text-sm font-bold text-white transition hover:border-white hover:bg-white/10"
+            >
+              Request Service Online
+            </Link>
+          )}
           <span className="text-base font-semibold text-white/90">{BUSINESS.phoneDisplay}</span>
         </div>
       </div>

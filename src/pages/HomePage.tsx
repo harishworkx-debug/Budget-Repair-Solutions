@@ -207,6 +207,9 @@ function ServiceSpotlight({
   image,
   imageAlt,
   slugs,
+  hubUrl = '/hvac-services',
+  hubLabel = 'View all HVAC services',
+  contextualLink,
   reversed = false,
   muted = false,
 }: {
@@ -217,6 +220,9 @@ function ServiceSpotlight({
   image: string;
   imageAlt: string;
   slugs: string[];
+  hubUrl?: string;
+  hubLabel?: string;
+  contextualLink?: { to: string; label: string };
   reversed?: boolean;
   muted?: boolean;
 }) {
@@ -227,7 +233,7 @@ function ServiceSpotlight({
     <section id={id} className={`py-24 ${muted ? 'bg-slate-50' : 'bg-white'}`}>
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
         <div className={`overflow-hidden rounded-3xl shadow-xl shadow-navy-900/10 ${reversed ? 'lg:order-2' : ''}`}>
-          <img src={image} alt={imageAlt} loading="lazy" className="aspect-[4/3] h-full w-full object-cover" />
+          <img src={image} alt={imageAlt} loading="lazy" decoding="async" className="aspect-[4/3] h-full w-full object-cover" />
         </div>
         <div className="flex flex-col gap-6">
           <p className="text-sm font-semibold uppercase tracking-widest text-sky-600">{eyebrow}</p>
@@ -248,11 +254,19 @@ function ServiceSpotlight({
           </ul>
           <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center">
             {primary && <PhoneButton label={`Call for ${primary.name}`} variant="primary" />}
-            <Link to="/hvac-services" className="inline-flex items-center gap-2 text-sm font-semibold text-navy-800 hover:text-sky-600">
-              View all HVAC services
+            <Link to={hubUrl} className="inline-flex items-center gap-2 text-sm font-semibold text-navy-800 hover:text-sky-600">
+              {hubLabel}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
+          {contextualLink && (
+            <p className="text-xs text-slate-500">
+              Need direct assistance?{' '}
+              <Link to={contextualLink.to} className="font-semibold text-sky-700 underline underline-offset-2 hover:text-navy-900">
+                {contextualLink.label}
+              </Link>
+            </p>
+          )}
         </div>
       </div>
     </section>
@@ -261,9 +275,10 @@ function ServiceSpotlight({
 
 export function HomePage() {
   useSeo({
-    title: `HVAC Repair and Installation in ${locationLabel} | ${BUSINESS.name}`,
-    description: `Heating and air conditioning repair, installation, and maintenance from ${BUSINESS.name} in ${locationLabel}. Call ${BUSINESS.phoneDisplay} directly to discuss your HVAC needs.`,
+    title: `HVAC Repair & AC Services in Lawrenceville, GA | ${BUSINESS.name}`,
+    description: `Budget Repair Solutions provides heating and air conditioning services for homeowners in Lawrenceville, Georgia, and surrounding communities. Call (470) 331-4715.`,
     path: '/',
+    faqs: HOME_FAQS,
   });
 
   const featured = pickServices(FEATURED_SLUGS);
@@ -275,23 +290,29 @@ export function HomePage() {
         <img
           src={HERO_IMAGE}
           alt="Modern outdoor air conditioning unit beside a residential building surrounded by landscaping"
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/85 to-navy-950/30" aria-hidden="true" />
         <div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-6 pb-24 pt-20 md:pt-28 lg:pb-32">
           <p className="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-sky-200">
             <Thermometer className="h-4 w-4" aria-hidden="true" />
-            HVAC Contractor, {locationLabel}
+            HVAC Contractor • {locationLabel}
           </p>
           <h1 className="max-w-3xl text-4xl font-bold leading-[1.1] sm:text-5xl lg:text-6xl">
-            Reliable Heating and Air Conditioning Services in Georgia
+            Reliable HVAC & Air Conditioning Services in Lawrenceville, GA
           </h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-white/85">
-            Looking for HVAC repair, heating service, or air conditioning solutions? Contact Budget Repair Solutions to
-            discuss your HVAC needs and confirm service availability.
-          </p>
+          <div className="max-w-2xl space-y-3 text-lg leading-relaxed text-white/85">
+            <p>
+              Budget Repair Solutions provides heating and air conditioning services for homeowners in Lawrenceville, Georgia, and surrounding communities. Whether your air conditioner is not cooling properly, your heating system needs attention, or you are planning an HVAC installation, our team can help you find the right service for your home.
+            </p>
+            <p className="text-base text-white/75">
+              From AC troubleshooting and heating repairs to system installation and preventative maintenance, we focus on practical solutions that help keep your home comfortable throughout Georgia's changing seasons.
+            </p>
+          </div>
           <div className="flex flex-col gap-4 sm:flex-row">
-            <PhoneButton label="Call Budget Repair Solutions" variant="primary" className="px-8 py-4 text-base" />
+            <PhoneButton label={`Call Budget Repair Solutions: ${BUSINESS.phoneDisplay}`} variant="primary" className="px-8 py-4 text-base" />
             <Link
               to="/hvac-services"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 px-8 py-4 text-base font-bold text-white transition hover:border-white hover:bg-white/10"
@@ -300,7 +321,35 @@ export function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-4 max-w-3xl">
+          {/* Crawlable High-Priority Service & Area Links */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-xs text-white/85">
+            <span className="font-bold text-sky-300">Quick Links:</span>
+            <Link to="/ac-repair-lawrenceville-ga" className="hover:text-white underline underline-offset-2">
+              Explore our AC Repair Services
+            </Link>
+            <span className="text-white/40">•</span>
+            <Link to="/hvac-installation-lawrenceville-ga" className="hover:text-white underline underline-offset-2">
+              Learn about our HVAC Installation Services
+            </Link>
+            <span className="text-white/40">•</span>
+            <Link to="/heating-services" className="hover:text-white underline underline-offset-2">
+              View our Heating Services
+            </Link>
+            <span className="text-white/40">•</span>
+            <Link to="/hvac-maintenance-lawrenceville-ga" className="hover:text-white underline underline-offset-2">
+              HVAC Maintenance Lawrenceville
+            </Link>
+            <span className="text-white/40">•</span>
+            <Link to="/service-areas" className="hover:text-white underline underline-offset-2">
+              Service Areas
+            </Link>
+            <span className="text-white/40">•</span>
+            <Link to="/contact" className="hover:text-white underline underline-offset-2">
+              Contact
+            </Link>
+          </div>
+
+          <div className="mt-2 max-w-3xl">
             <ServiceAreaFinder theme="dark" />
           </div>
         </div>
@@ -444,6 +493,18 @@ export function HomePage() {
               );
             })}
           </div>
+
+          <div className="mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center text-sm text-slate-700">
+            System exhibiting one of these problems? Learn how our technicians diagnose root causes on our{' '}
+            <Link to="/hvac-repair-lawrenceville-ga" className="font-bold text-navy-900 underline underline-offset-2 hover:text-sky-600">
+              HVAC Repair Lawrenceville
+            </Link>{' '}
+            page, or{' '}
+            <Link to="/contact" className="font-bold text-navy-900 underline underline-offset-2 hover:text-sky-600">
+              contact our Lawrenceville team
+            </Link>{' '}
+            for prompt diagnostic dispatch.
+          </div>
         </div>
       </section>
 
@@ -456,6 +517,9 @@ export function HomePage() {
         image={COOLING_IMAGE}
         imageAlt="Outdoor air conditioning condenser unit mounted on a brick wall"
         slugs={COOLING_SLUGS}
+        hubUrl="/air-conditioning-services"
+        hubLabel="View our Air Conditioning Services"
+        contextualLink={{ to: '/ac-repair-lawrenceville-ga', label: 'Explore our AC Repair Services in Lawrenceville' }}
         muted
       />
 
@@ -468,6 +532,9 @@ export function HomePage() {
         image={HEATING_IMAGE}
         imageAlt="Technician adjusting a heating system with precise instruments"
         slugs={HEATING_SLUGS}
+        hubUrl="/heating-services"
+        hubLabel="View our Heating Services"
+        contextualLink={{ to: '/heating-repair-lawrenceville-ga', label: 'Heating Repair & Furnace Services' }}
         reversed
       />
 
@@ -554,6 +621,16 @@ export function HomePage() {
                   <p className="mt-4 text-sm leading-relaxed text-slate-600">{item.body}</p>
                 </article>
               ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-navy-800 transition hover:text-sky-600"
+              >
+                Meet our local HVAC technicians & learn about our diagnostic standards
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </section>
@@ -672,6 +749,16 @@ export function HomePage() {
                   <ArrowRight className="h-5 w-5 shrink-0 text-navy-700 transition group-hover:translate-x-1" aria-hidden="true" />
                 </Link>
               ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <Link
+                to="/service-areas"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-navy-800 shadow-xs transition hover:border-sky-300 hover:bg-slate-50 hover:text-sky-600"
+              >
+                Explore Full Georgia HVAC Service Areas Directory & Dispatch Logistics
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </section>

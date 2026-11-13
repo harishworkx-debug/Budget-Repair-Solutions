@@ -47,7 +47,13 @@ export function PageHeader({ eyebrow, title, description, crumbs, actions, image
 
         {image && (
           <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/40">
-            <img src={image.src} alt={image.alt} className="aspect-[4/3] h-full w-full object-cover" />
+            <img
+              src={image.src}
+              alt={image.alt}
+              fetchPriority="high"
+              decoding="async"
+              className="aspect-[4/3] h-full w-full object-cover"
+            />
           </div>
         )}
       </div>

@@ -21,11 +21,11 @@ export function renderRoute(path: string): ReactNode {
       return (
         <ServiceListPage
           path="/hvac-services"
-          title={`HVAC Services in ${BUSINESS.regionName} | ${BUSINESS.name}`}
-          description={`Browse HVAC repair, installation, and maintenance services from ${BUSINESS.name}. Call directly to discuss your system.`}
+          title={`HVAC Services Lawrenceville GA | ${BUSINESS.name}`}
+          description={`Comprehensive HVAC services in Lawrenceville, GA by ${BUSINESS.name}. Trusted HVAC contractor and HVAC service company for repairs, installation, and tune-ups.`}
           eyebrow="HVAC Services"
-          heading="Heating, cooling, and ventilation services"
-          intro="Browse our HVAC services, from repairs and tune-ups to full system installation. Each service has its own page with the common problems we see and answers to frequent questions."
+          heading="HVAC Services in Lawrenceville, GA"
+          intro="Browse heating and cooling services from our Lawrenceville HVAC service company. From fast repairs and seasonal tune-ups to full system replacements, our local technicians are ready to help."
           crumbs={[{ label: 'Home', to: '/' }, { label: 'HVAC Services' }]}
           services={SERVICES}
         />
@@ -34,11 +34,11 @@ export function renderRoute(path: string): ReactNode {
       return (
         <ServiceListPage
           path="/air-conditioning-services"
-          title={`Air Conditioning Repair and Installation | ${BUSINESS.name}`}
-          description={`Air conditioning repair and installation from ${BUSINESS.name}. Call to describe weak cooling, noises, or thermostat problems.`}
-          eyebrow="Air Conditioning"
-          heading="Air conditioning repair and installation"
-          intro="When your home is not cooling the way it should, the problem could be refrigerant, airflow, electrical parts, or controls. Explore our cooling services and call to talk through what your system is doing."
+          title={`Air Conditioning Services Lawrenceville GA | ${BUSINESS.name}`}
+          description={`Reliable air conditioning services in Lawrenceville, GA. Expert AC repair, energy-efficient AC installation, and seasonal AC maintenance from ${BUSINESS.name}.`}
+          eyebrow="Air Conditioning Services"
+          heading="Air Conditioning Services in Lawrenceville, GA"
+          intro="When your cooling system is not keeping up with Georgia heat, our technicians deliver complete air conditioning services—including diagnostic AC repair, new AC installation, and preventive AC maintenance."
           crumbs={[{ label: 'Home', to: '/' }, { label: 'Air Conditioning' }]}
           services={servicesWithTag('cooling')}
         />
@@ -47,11 +47,11 @@ export function renderRoute(path: string): ReactNode {
       return (
         <ServiceListPage
           path="/heating-services"
-          title={`Heating Repair and Furnace Services | ${BUSINESS.name}`}
-          description={`Heating repair, furnace repair, and heat pump service from ${BUSINESS.name}. Call directly to discuss your heating system.`}
-          eyebrow="Heating"
-          heading="Heating repair, furnace, and heat pump services"
-          intro="Cold weather is when heating problems matter most. Explore our heating services, from furnace repair and installation to heat pump service, and call to confirm what your system needs."
+          title={`Heating Services Lawrenceville GA | ${BUSINESS.name}`}
+          description={`Dependable heating services in Lawrenceville, GA. Professional heating repair, gas and electric furnace service, and dual-season heat pump service from ${BUSINESS.name}.`}
+          eyebrow="Heating Services"
+          heading="Heating Services in Lawrenceville, GA"
+          intro="Cold weather demands dependable warmth. Explore our Lawrenceville heating services, from emergency heating repair and furnace service to heat pump troubleshooting and system upgrades."
           crumbs={[{ label: 'Home', to: '/' }, { label: 'Heating' }]}
           services={servicesWithTag('heating')}
         />
@@ -66,15 +66,15 @@ export function renderRoute(path: string): ReactNode {
       return <ContactPage />;
   }
 
-  const cleanRoute = route.slice(1);
-  const area = findServiceAreaBySlug(cleanRoute);
-  if (area) return <AreaDetailPage area={area} />;
-
   if (route.endsWith(LOCATION_SUFFIX)) {
     const serviceSlug = route.slice(1, route.length - LOCATION_SUFFIX.length);
     const service = findServiceBySlug(serviceSlug);
     if (service) return <ServiceDetailPage service={service} />;
   }
+
+  const cleanRoute = route.slice(1);
+  const area = findServiceAreaBySlug(cleanRoute);
+  if (area) return <AreaDetailPage area={area} />;
 
   return <NotFoundPage />;
 }

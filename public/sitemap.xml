@@ -1,178 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core & Info Pages -->
+  <!-- Core Website Pages (Tier 1) -->
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/about</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/reviews</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/contact</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
 
-  <!-- Service Hubs & Category Pages -->
+  <!-- Service Hubs (Tier 2) -->
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/hvac-services</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/air-conditioning-services</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/heating-services</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/service-areas</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
 
-  <!-- Specific HVAC Service Pages -->
+  <!-- Individual Service Pages in Lawrenceville, GA (Tier 3) -->
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/ac-repair-lawrenceville-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/air-conditioning-installation-lawrenceville-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/hvac-repair-lawrenceville-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/hvac-installation-lawrenceville-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/heating-repair-lawrenceville-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/furnace-repair-lawrenceville-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/furnace-installation-lawrenceville-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/heat-pump-repair-lawrenceville-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/heat-pump-installation-lawrenceville-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/hvac-maintenance-lawrenceville-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/thermostat-installation-lawrenceville-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
 
-  <!-- Service Area Landing Pages (AC Repair by City) -->
+  <!-- Regional City Landing Pages (Tier 4) -->
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/ac-repair-snellville-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/ac-repair-lilburn-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/ac-repair-duluth-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/ac-repair-suwanee-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/ac-repair-loganville-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/ac-repair-grayson-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/ac-repair-dacula-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/ac-repair-norcross-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.budgetrepairsolutionsga.com/ac-repair-atlanta-ga</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-11-13</lastmod>
   </url>
 </urlset>

@@ -17,6 +17,24 @@ export interface ServiceFaq {
   answer: string;
 }
 
+export interface DiagnosticStep {
+  step: string;
+  title: string;
+  detail: string;
+}
+
+export interface TechnicalDeepDive {
+  title: string;
+  overview: string;
+  points: { label: string; text: string }[];
+}
+
+export interface RepairVsReplaceFactor {
+  factor: string;
+  repair: string;
+  replace: string;
+}
+
 export interface Service {
   slug: string;
   name: string;
@@ -24,10 +42,20 @@ export interface Service {
   icon: LucideIcon;
   image: string;
   imageAlt: string;
+  primaryKeyword: string;
+  secondaryKeywords: string[];
+  seoTitle: string;
+  seoDescription: string;
+  h1: string;
   summary: string;
   intro: string;
+  symptomsTitle?: string;
   problems: string[];
+  workIncludedTitle?: string;
   workIncluded: string[];
+  deepDive?: TechnicalDeepDive;
+  diagnosticProcess?: DiagnosticStep[];
+  repairVsReplace?: RepairVsReplaceFactor[];
   faqs: ServiceFaq[];
 }
 
@@ -35,330 +63,830 @@ export const SERVICES: Service[] = [
   {
     slug: 'ac-repair',
     name: 'AC Repair',
+    primaryKeyword: 'AC repair Lawrenceville GA',
+    secondaryKeywords: [
+      'Emergency AC repair',
+      'AC not cooling',
+      'Air conditioner troubleshooting',
+      'Air conditioning repair Lawrenceville',
+    ],
+    seoTitle: 'AC Repair Lawrenceville GA | Budget Repair Solutions',
+    seoDescription:
+      'AC not cooling, blowing warm air, or leaking? Call Budget Repair Solutions at (470) 331-4715 for reliable AC repair in Lawrenceville, GA. Direct technician support.',
+    h1: 'Air Conditioning Repair in Lawrenceville, GA',
     tags: ['cooling'],
     icon: Snowflake,
     image: 'https://images.pexels.com/photos/16848596/pexels-photo-16848596.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     imageAlt: 'Outdoor air conditioning condenser unit mounted on a brick wall',
     summary: 'Diagnosis and repair when your air conditioner runs but no longer cools the way it should.',
     intro:
-      'When an air conditioner stops cooling, the cause is often a specific component: a weak refrigerant charge, a failing capacitor, a clogged coil, or a condensate drain that has backed up. Repair starts with finding which part is failing so you are not replacing parts that still work.',
-    problems: ['Warm air blowing from vents', 'Unit runs but never reaches the set temperature', 'Ice forming on refrigerant lines or indoor coil'],
+      'When an air conditioner stops cooling during a humid Georgia summer, the cause is rarely random. It is usually a specific mechanical or electrical failure: a low refrigerant charge from an undetected joint leak, a failing dual-run capacitor, a clogged evaporator coil, or a backed-up condensate drain tripping safety switches. Repair starts with structured diagnostic testing so you are never paying for parts that still work.',
+    symptomsTitle: 'Signs Your Air Conditioner Needs Repair',
+    problems: [
+      'AC not blowing cold air: Unit runs continuously but vents discharge lukewarm or room-temperature air',
+      'Air conditioner making unusual noises: Loud clicking on startup, high-pitched screeching, or electrical buzzing',
+      'Refrigerant and airflow problems: Weak air volume trickling from supply registers and uneven room temperatures',
+      'Frozen evaporator coil: Ice accumulating on indoor copper suction lines, air handler cabinet, or outdoor unit',
+      'Water pooling around indoor air handler: Clogged condensate drain line backing up into the overflow drip pan',
+      'Frequent short-cycling: Unit turns on for three minutes and shuts down before completing a full cooling cycle',
+    ],
+    workIncludedTitle: 'Our Comprehensive AC Diagnostic & Repair Scope',
     workIncluded: [
-      'Checking refrigerant pressures and charge',
-      'Testing capacitors, contactors, and fan motors',
-      'Cleaning or repairing condenser and evaporator coils',
-      'Clearing condensate drain lines',
+      'Refrigerant operating pressure testing (superheat & subcooling analysis)',
+      'Dual-run capacitor microfarad ratings and compressor contactor load testing',
+      'Evaporator and condenser coil airflow inspection and fin straightening',
+      'Condensate drain line vacuum cleanout and safety overflow float switch testing',
+      'Blower motor amp draw and indoor static pressure measurement',
+      'Thermostat calibration and 24-volt transformer control circuit check',
+    ],
+    deepDive: {
+      title: 'Common AC Problems in Georgia Homes',
+      overview:
+        'Georgia’s heat and 70%+ humidity subject cooling systems to extreme operational stress. Here is how our technicians diagnose the root cause:',
+      points: [
+        {
+          label: 'Refrigerant Leaks vs. Undercharge',
+          text: 'Air conditioners do not consume refrigerant like gasoline. If your system is low on refrigerant, there is a leak—often at copper brazed joints or aluminum evaporator coil bends. We use electronic leak detectors to locate leaks before recharging.',
+        },
+        {
+          label: 'Capacitor & Contactor Failures',
+          text: 'Run capacitors store electrical energy to start and run the compressor and fan. High Georgia summer temperatures degrade capacitor electrolyte, causing them to bulge and lose capacitance, leaving the outdoor compressor humming and unable to start.',
+        },
+        {
+          label: 'Condensate Drain Line Backups',
+          text: 'A typical Georgia central AC pulls 5 to 15 gallons of water out of the air each day. Mold and algae readily multiply in the drain line, creating gelatinous clogs that overflow the drain pan unless treated and cleared regularly.',
+        },
+      ],
+    },
+    diagnosticProcess: [
+      {
+        step: '01',
+        title: 'Initial Intake & Symptom Review',
+        detail:
+          'We inspect the thermostat, review operating history, and listen to the outdoor and indoor units during startup to detect electrical or mechanical distress.',
+      },
+      {
+        step: '02',
+        title: 'Electrical & Mechanical Testing',
+        detail:
+          'Technicians measure operating voltages, motor capacitor microfarads, compressor amp draws, and check safety switches for continuity.',
+      },
+      {
+        step: '03',
+        title: 'Refrigeration Cycle Analysis',
+        detail:
+          'Using digital manifold gauges and pipe thermistors, we verify accurate superheat and subcooling measurements to assess compressor pumping efficiency and refrigerant volume.',
+      },
+      {
+        step: '04',
+        title: 'Transparent Repair & Verification',
+        detail:
+          'We explain the exact failing component in plain language, complete the repair with factory-grade parts, and test the supply-to-return temperature drop (16-20°F delta-T) before handoff.',
+      },
+    ],
+    repairVsReplace: [
+      {
+        factor: 'System Age',
+        repair: 'Unit is under 10-12 years old and has been serviced regularly',
+        replace: 'Unit is 14+ years old and approaching the end of its design life',
+      },
+      {
+        factor: 'Repair Cost',
+        repair: 'Repair costs are under 30-40% of the replacement value',
+        replace: 'Major failure (e.g. grounded compressor) exceeds 50% of system cost',
+      },
+      {
+        factor: 'Refrigerant Type',
+        repair: 'Modern R-410A system with readily available parts and refrigerant',
+        replace: 'Obsolete R-22 Freon system where refrigerant costs are prohibitive',
+      },
+      {
+        factor: 'Comfort & Efficiency',
+        repair: 'Equipment still maintains even temperatures throughout the home',
+        replace: 'Chronic hot rooms, rising energy bills, and multiple annual breakdowns',
+      },
     ],
     faqs: [
       {
-        question: 'Why is my AC running but not cooling?',
+        question: 'Why is my air conditioner running but not cooling?',
         answer:
-          'Common causes include low refrigerant from a leak, a dirty condenser coil, a failing capacitor, or a frozen evaporator coil. A technician needs to check pressures and airflow to tell them apart.',
+          'Common causes include a weak or blown run capacitor preventing the outdoor compressor from starting, low refrigerant from a joint or coil leak, a heavily clogged air filter choking airflow, or a frozen evaporator coil. A technician must check electrical connections and refrigerant pressures to determine the exact cause.',
       },
       {
-        question: 'Should I repair or replace an old air conditioner?',
+        question: 'How do I know if my AC needs professional repair?',
         answer:
-          'It depends on the age of the system, the cost of the repair, and how often it has needed service. A technician can walk you through the options so you can decide with the facts in front of you.',
+          'Clear signs include warm air blowing from vents, sudden loud noises (buzzing, grinding, or clicking), water pooling around your indoor furnace/air handler, ice on the copper lines, frequent breaker tripping, or utility bills jumping without a weather change.',
+      },
+      {
+        question: 'Why is my air conditioner freezing up?',
+        answer:
+          'An AC freezes when the indoor coil drops below 32°F, causing moisture to turn into ice. This is caused either by choked airflow (a dirty air filter, blocked return grilles, or failing blower motor) or low refrigerant, which drops coil pressure and temperature.',
+      },
+      {
+        question: 'How often should an air conditioning system be serviced?',
+        answer:
+          'In Georgia, cooling systems should receive a professional tune-up once each spring before summer heat arrives. Annual maintenance clears condensate lines, washes outdoor coils, tests capacitors, and prevents up to 85% of unexpected summer breakdowns.',
+      },
+      {
+        question: 'When should I consider replacing my AC unit?',
+        answer:
+          'Consider replacement if your air conditioner is over 12-15 years old, uses phased-out R-22 Freon, requires frequent expensive repairs, or has suffered a major compressor burnout. We provide honest comparisons so you can make an informed financial decision.',
       },
     ],
   },
   {
     slug: 'air-conditioning-installation',
     name: 'Air Conditioning Installation',
+    primaryKeyword: 'AC installation Lawrenceville GA',
+    secondaryKeywords: [
+      'HVAC system replacement',
+      'Air conditioner installation Lawrenceville',
+      'New AC unit sizing',
+      'Energy-efficient cooling upgrade',
+    ],
+    seoTitle: 'AC Installation Lawrenceville GA | Budget Repair Solutions',
+    seoDescription:
+      'Properly sized air conditioning installation and HVAC replacement in Lawrenceville, GA. Call Budget Repair Solutions at (470) 331-4715 for an honest cooling consultation.',
+    h1: 'Air Conditioning Installation in Lawrenceville, GA',
     tags: ['cooling'],
     icon: Wind,
     image: 'https://images.pexels.com/photos/34887522/pexels-photo-34887522.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     imageAlt: 'Wall-mounted air conditioner installed on a concrete wall',
     summary: 'Planning and installing a new air conditioning system sized for the home it will serve.',
     intro:
-      'An air conditioner is only as good as its fit. Equipment that is too large short-cycles and wastes energy, while a unit that is too small runs constantly and never catches up on hot afternoons. Installation begins with a load review of the home, then matches the outdoor and indoor equipment so they work together.',
-    problems: ['Aging system that no longer keeps rooms comfortable', 'Rooms that are consistently hotter than the rest of the house', 'Rising energy bills from an inefficient unit'],
+      'An air conditioner is only as efficient as its sizing, installation quality, and duct compatibility. Equipment that is oversized short-cycles, failing to dehumidify Georgia air and wearing out prematurely. Equipment that is undersized runs continuously on hot summer afternoons and never satisfies the thermostat. Our installation process begins with an accurate load review of your property to match the outdoor condenser and indoor evaporator coil perfectly.',
+    symptomsTitle: 'When to Replace an Old Air Conditioner',
+    problems: [
+      'System is over 12-15 years old and struggling to maintain comfortable temperatures',
+      'Frequent breakdowns and costly repair bills adding up each cooling season',
+      'System operates on phased-out R-22 Freon, making minor repairs excessively expensive',
+      'Compressor has locked up, burned out, or developed internal electrical grounding',
+      'Skyrocketing summer power bills due to degraded, low-SEER legacy equipment',
+      'Uneven cooling and high indoor humidity that tune-ups no longer resolve',
+    ],
+    workIncludedTitle: 'Complete AC Installation & Replacement Protocol',
     workIncluded: [
-      'Reviewing the home to size the system',
-      'Setting the outdoor condenser and indoor coil',
-      'Connecting refrigerant lines, electrical, and condensate drain',
-      'Checking refrigerant charge and airflow before handoff',
+      'Manual J residential cooling load calculation and equipment capacity sizing',
+      'Safe recovery and EPA-certified disposal of old equipment and refrigerant',
+      'Level condenser pad placement and vibration-isolation mounting',
+      'New indoor cased evaporator coil installation matched to system AHRI rating',
+      'Brazing copper line set under nitrogen purge to prevent internal oxidation',
+      'Triple-evacuation vacuum pull down below 500 microns to eliminate moisture',
+      'Digital airflow verification, static pressure check, and thermostat integration',
+    ],
+    deepDive: {
+      title: 'Energy Efficiency, SEER2 Standards & Sizing',
+      overview:
+        'Federal energy guidelines for the Southeast region require modern residential central air conditioners to meet strict SEER2 (Seasonal Energy Efficiency Ratio 2) standards:',
+      points: [
+        {
+          label: 'Southeast SEER2 Mandate (Minimum 14.3 SEER2)',
+          text: 'New systems installed in Georgia must meet minimum 14.3 SEER2 (equivalent to older 15 SEER) standards. Modern systems deliver significantly higher cooling output per kilowatt-hour of electricity, cutting cooling costs by 20-35%.',
+        },
+        {
+          label: 'Manual J Cooling Load Calculations',
+          text: 'Proper AC sizing is based on square footage, ceiling heights, window orientation, insulation R-values, and home shading. We ensure your system is accurately sized to prevent short-cycling and maintain optimal humidity removal.',
+        },
+        {
+          label: 'Matched AHRI Systems',
+          text: 'Replacing an outdoor condenser while leaving an incompatible older indoor coil lowers efficiency and risks early compressor failure. We install AHRI-matched outdoor and indoor pairs for verified performance.',
+        },
+      ],
+    },
+    diagnosticProcess: [
+      {
+        step: '01',
+        title: 'Home Assessment & Heat Load Review',
+        detail:
+          'We evaluate your home layout, ductwork integrity, window exposures, and electrical panel capacity to determine the ideal system tonnage and SEER2 tier.',
+      },
+      {
+        step: '02',
+        title: 'Transparent Equipment Options',
+        detail:
+          'We present clear equipment choices—single-stage, two-stage, or variable-speed—matching your comfort goals and budget without sales gimmicks.',
+      },
+      {
+        step: '03',
+        title: 'Precision Mechanical Installation',
+        detail:
+          'Our technicians set equipment, run new copper line sets, connect electrical disconnects and whips, install secondary drain pans, and braze under dry nitrogen.',
+      },
+      {
+        step: '04',
+        title: 'Commissioning & Homeowner Walkthrough',
+        detail:
+          'We pull a deep vacuum, charge to exact subcooling specifications, test airflow at registers, program your thermostat, and walk you through system operation.',
+      },
+    ],
+    repairVsReplace: [
+      {
+        factor: 'Equipment Lifespan',
+        repair: 'Equipment is less than 10 years old with a minor electrical fault',
+        replace: 'Equipment is 12-15+ years old and uses outdated R-22 refrigerant',
+      },
+      {
+        factor: 'The $5,000 Rule',
+        repair: 'Age of unit multiplied by repair cost is well under $5,000',
+        replace: 'Age of unit multiplied by repair cost exceeds $5,000 (time to replace)',
+      },
+      {
+        factor: 'Comfort & Humidity Control',
+        repair: 'Home stays dry and comfortable once the failing part is swapped',
+        replace: 'Home feels sticky, humid, and rooms are uneven even when the unit runs',
+      },
     ],
     faqs: [
       {
         question: 'How do I know what size air conditioner my home needs?',
         answer:
-          'Size depends on the home’s layout, insulation, windows, and climate exposure, not just square footage. A proper load review is the reliable way to determine the right capacity.',
+          'AC capacity is measured in tons (1 ton = 12,000 BTUs). Sizing depends on square footage, insulation levels, window count, ceiling height, and climate exposure. An undersized unit will run constantly, while an oversized unit will short-cycle and leave the air clammy. We perform a heat load calculation to pinpoint the exact tonnage needed.',
       },
       {
-        question: 'Can you replace only the outdoor unit?',
+        question: 'Can you replace only the outdoor condenser unit?',
         answer:
-          'Sometimes, but the indoor coil and outdoor unit must be compatible. A technician can check the existing components before recommending a partial or full replacement.',
+          'In some cases yes, but only if the indoor evaporator coil is compatible in age, refrigerant type (R-410A), and SEER2 ratings. Pairing a new condenser with an old, mismatched indoor coil usually invalidates manufacturer warranties and lowers efficiency.',
+      },
+      {
+        question: 'What is SEER2 and why does it matter in Georgia?',
+        answer:
+          'SEER2 is the updated standard testing procedure for cooling efficiency. In the Southeast region, minimum residential AC standards are 14.3 SEER2. Upgrading from an older 10 SEER system to a 15-17 SEER2 system can reduce summer cooling bills by 25% to 40%.',
+      },
+      {
+        question: 'How long does a complete AC installation take?',
+        answer:
+          'Most standard residential AC installations are completed in a single day (typically 6 to 8 hours). Complex jobs involving extensive ductwork modifications or dual-system changeouts may require additional time.',
       },
     ],
   },
   {
     slug: 'hvac-repair',
     name: 'HVAC Repair',
+    primaryKeyword: 'HVAC repair Lawrenceville GA',
+    secondaryKeywords: [
+      'Heating and cooling repair',
+      'Air conditioner troubleshooting',
+      'Emergency HVAC fix',
+      'Lawrenceville HVAC technician',
+    ],
+    seoTitle: 'HVAC Repair Lawrenceville GA | Budget Repair Solutions',
+    seoDescription:
+      'Comprehensive HVAC repair in Lawrenceville, GA. Troubleshooting heating and cooling systems, airflow issues, and controls. Call (470) 331-4715.',
+    h1: 'Professional HVAC Repair in Lawrenceville, GA',
     tags: ['cooling', 'heating'],
     icon: Wrench,
     image: 'https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     imageAlt: 'Technician using a manifold gauge to repair an outdoor air conditioner',
     summary: 'Repairs for heating and cooling systems when a single system is not performing as expected.',
     intro:
-      'Many HVAC problems show up as comfort issues: uneven rooms, strange sounds, or a system that cycles on and off. Because the heating and cooling halves share the same airflow and controls, a repair often means looking at the whole system rather than one part in isolation.',
-    problems: ['System cycles on and off frequently', 'Unusual noises from the indoor or outdoor unit', 'Some rooms are much hotter or colder than others'],
+      'Because heating and cooling systems share identical ductwork, blower assemblies, and control wiring, an issue that appears in one season often stems from shared components. A blower motor failing in July will prevent your furnace from heating in December. Our whole-system HVAC repair approach inspects electrical, mechanical, and airflow pathways together to identify root causes and ensure year-round reliability.',
+    symptomsTitle: 'Heating & Cooling Problems We Solve',
+    problems: [
+      'System short-cycling: Heating or AC shuts off within minutes of starting up',
+      'Airflow and thermostat issues: Registers produce weak airflow or temperature settings drift',
+      'Strange noises and system shutdowns: Grinding fan bearings, clicking relays, or vibrating sheet metal',
+      'Rooms unevenly conditioned: Supply air is warm in some rooms and cool in others',
+      'High utility bills: System running extended hours to achieve modest temperature shifts',
+      'Safety switch cutouts: Drain float switches or furnace high-limit switches interrupting power',
+    ],
+    workIncludedTitle: 'Full-System HVAC Diagnostic & Repair Scope',
     workIncluded: [
-      'Full-system diagnostic check',
-      'Electrical component testing and replacement',
-      'Airflow and duct inspection at the supply and return points',
-      'Thermostat and control verification',
+      'Comprehensive electrical testing of contactors, relays, capacitors, and transformers',
+      'Blower assembly inspection, wheel balance check, and motor amp draw testing',
+      'Supply and return ductwork static pressure measurement across filter media',
+      'Thermostat low-voltage wiring and control board sequencing verification',
+      'Safety circuit inspection: limit switches, pressure switches, and condensate cutoffs',
+      'Complete diagnostic report with itemized repair options',
+    ],
+    deepDive: {
+      title: 'Whole-System Residential HVAC Troubleshooting',
+      overview:
+        'Modern heating and air systems operate on tightly coupled feedback loops between airflow, electrical signals, and mechanical components:',
+      points: [
+        {
+          label: 'Airflow Restrictions & Static Pressure',
+          text: 'Restricted airflow is the #1 killer of compressors and heat exchangers. Dirty filters or undersized returns cause air conditioning coils to freeze in summer and furnaces to trip high-limit switches in winter.',
+        },
+        {
+          label: 'Low-Voltage Control Wiring (24V)',
+          text: 'Thermostat communication faults, corroded wire nuts, or failing 24V transformers can intermittently drop contactor engagement, causing systems to cycle erratically or shut down completely.',
+        },
+        {
+          label: 'Shared Blower Assemblies',
+          text: 'Both gas heat and electric air conditioning depend on the indoor blower fan. Worn motor bearings or failing ECM control modules reduce airflow velocity and spike electrical consumption.',
+        },
+      ],
+    },
+    diagnosticProcess: [
+      {
+        step: '01',
+        title: 'Whole-System Diagnostic Evaluation',
+        detail:
+          'We test both heating and cooling operational cycles, inspect safety interlocks, and measure electrical loads against manufacturer specifications.',
+      },
+      {
+        step: '02',
+        title: 'Root Cause Identification',
+        detail:
+          'We isolate whether the failure is electrical (capacitors, control board), mechanical (motors, valves), or airflow-related (static pressure, duct restrictions).',
+      },
+      {
+        step: '03',
+        title: 'Clear Repair Recommendations',
+        detail:
+          'We provide straightforward repair choices with upfront pricing and explain how the repair restores system balance.',
+      },
     ],
     faqs: [
       {
-        question: 'My system turns on and off all the time. Is that a problem?',
+        question: 'Do you repair both heating and air conditioning during the same visit?',
         answer:
-          'Frequent cycling can point to an airflow restriction, an oversized unit, a faulty sensor, or a control problem. It is worth having it checked before it leads to larger failures.',
+          'Yes. Because both systems share the indoor air handler/furnace, blower wheel, ductwork, and thermostat, our technicians examine the shared components to ensure reliable operation in all seasons.',
       },
       {
-        question: 'Do you repair both heating and cooling?',
+        question: 'Why does my HVAC system turn on and off every few minutes?',
         answer:
-          'Yes. HVAC repair covers the full system, so a single visit can address a problem on either side of the equipment.',
+          'Short cycling can indicate an oversized system, an overheated furnace tripping its high-limit switch, an AC freezing due to restricted airflow, or a malfunctioning thermostat sensor. We test operating temperatures and pressures to identify the trigger.',
       },
     ],
   },
   {
     slug: 'hvac-installation',
     name: 'HVAC Installation',
+    primaryKeyword: 'HVAC installation Lawrenceville GA',
+    secondaryKeywords: [
+      'HVAC system replacement',
+      'Heating and cooling system install',
+      'New HVAC unit Lawrenceville',
+      'Full system changeout',
+    ],
+    seoTitle: 'HVAC Installation Lawrenceville GA | Budget Repair Solutions',
+    seoDescription:
+      'Complete HVAC installation and system replacement in Lawrenceville, GA. Matched heating and cooling units sized for comfort. Call (470) 331-4715.',
+    h1: 'HVAC Installation & System Replacement in Lawrenceville, GA',
     tags: ['cooling', 'heating'],
     icon: Thermometer,
     image: 'https://images.pexels.com/photos/24828656/pexels-photo-24828656.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     imageAlt: 'Modern condenser unit installed on the exterior wall of a building',
     summary: 'Complete heating and cooling system installation, matched and sized for your building.',
     intro:
-      'A full HVAC installation replaces both the heating and cooling equipment, and it is the best time to correct duct or airflow problems that were holding back the old system. Planning the layout, equipment match, and ductwork together helps the new system perform as a single, balanced unit.',
-    problems: ['Heating and cooling both struggling with age', 'Frequent repairs on a system nearing the end of its life', 'Comfort problems that a new layout would address'],
+      'Replacing your heating and air conditioning system together provides the highest return on investment in comfort, energy efficiency, and warranty protection. A matched installation pairs a new outdoor unit with a properly calibrated indoor coil and furnace/air handler, eliminating duct incompatibilities and delivering balanced airflow across your home.',
+    symptomsTitle: 'Signs It Is Time for Full System Replacement',
+    problems: [
+      'Both heating and cooling systems are over 12-15 years old and experiencing frequent failures',
+      'Frequent repairs on multiple system components over consecutive seasons',
+      'Energy costs climbing consistently despite regular filter changes and tune-ups',
+      'Severe comfort imbalances between living areas, upstairs bedrooms, and basements',
+      'System operates on phased-out refrigerant or has a compromised heat exchanger',
+    ],
+    workIncludedTitle: 'Complete HVAC Replacement & Commissioning',
     workIncluded: [
-      'Load review and equipment selection',
-      'Removal of existing equipment',
-      'Installation of furnace or air handler, coil, and outdoor unit',
-      'Startup testing and handoff walkthrough',
+      'Full-home Manual J load calculation to size heating BTUs and cooling tonnage',
+      'Removal, environmental evacuation, and recycling of legacy equipment',
+      'Installation of matched furnace or air handler, evaporator coil, and outdoor unit',
+      'Ductwork transition fabrication, mastic sealing, and static pressure balancing',
+      'Condensate drain line installation with secondary overflow safety shutoffs',
+      'Complete startup testing across heating and cooling modes before handoff',
     ],
     faqs: [
       {
-        question: 'How long does a full HVAC installation take?',
+        question: 'Should I replace heating and cooling at the same time?',
         answer:
-          'Timing depends on the equipment and the amount of duct and electrical work required. A technician can provide a clearer timeline after reviewing your home.',
+          'In most cases, yes. Installing matched equipment ensures the indoor blower and outdoor compressor communicate efficiently, maximizing SEER2 and AFUE ratings and qualifying for full manufacturer warranties.',
       },
       {
-        question: 'Will I need new ductwork?',
+        question: 'Will I need new ductwork when replacing my HVAC system?',
         answer:
-          'Not always. If the existing ducts are sound and correctly sized, they can often be reused. Damaged or undersized ducts should be addressed during the installation.',
+          'Not necessarily. If your existing ducts are correctly sized, insulated, and sealed, they can usually be reused. If ducts are leaky, undersized, or damaged, we make necessary transitions to match the new equipment.',
       },
     ],
   },
   {
     slug: 'heating-repair',
     name: 'Heating Repair',
+    primaryKeyword: 'Heating repair Lawrenceville GA',
+    secondaryKeywords: [
+      'Furnace not heating',
+      'Heating troubleshooting',
+      'Heater repair Lawrenceville',
+      'Emergency heating service',
+    ],
+    seoTitle: 'Heating Repair Lawrenceville GA | Budget Repair Solutions',
+    seoDescription:
+      'Fast heating repair in Lawrenceville, GA. We troubleshoot lukewarm air, failing ignitions, and strange noises. Call Budget Repair Solutions at (470) 331-4715.',
+    h1: 'Heating Repair & Emergency Heater Diagnostics in Lawrenceville, GA',
     tags: ['heating'],
     icon: Flame,
     image: 'https://images.pexels.com/photos/7859953/pexels-photo-7859953.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     imageAlt: 'Technician adjusting a heating system with precise instruments',
     summary: 'Repairs that restore reliable heat when your home is not warming up properly.',
     intro:
-      'Heating problems range from a simple thermostat setting to a failed ignition or a cracked heat exchanger. Because some heating faults involve gas or combustion safety, diagnosis focuses first on identifying and correcting safety-critical issues before restoring normal operation.',
-    problems: ['Heat stops or only blows lukewarm air', 'Burner or ignition fails to light', 'Strange smells or popping sounds when the heat starts'],
-    workIncluded: [
-      'Ignition and burner inspection',
-      'Gas valve and flame sensor testing',
-      'Blower motor and control board diagnostics',
-      'Safety checks on venting and heat exchanger',
+      'When cold winter snaps hit North Georgia, a heating failure is not just uncomfortable—it is an emergency. Heating repairs involve high-voltage electricity, gas lines, and combustion venting where safety is paramount. Our diagnostics verify ignition systems, flame sensors, draft pressure switches, and heat exchanger integrity before restoring steady heat to your home.',
+    symptomsTitle: 'Common Heating Problems We Resolve',
+    problems: [
+      'Heating interruptions: Blower runs continuously but only blows cool or lukewarm air',
+      'Failed ignition: Furnace clicks multiple times but burner fails to ignite or stays lit',
+      'Strange odors: Persistent burning, sulfur, or electrical smells upon heating startup',
+      'Rattling or banging sounds: Delayed ignition bangs or vibrating inducer fan motors',
+      'Thermostat not triggering heat: Thermostat calls for heat but equipment remains silent',
     ],
+    workIncludedTitle: 'Heating Diagnostic & Safety Check Scope',
+    workIncluded: [
+      'Ignition system and burner flame sensor testing and cleaning',
+      'Gas valve pressure testing and manifold safety verification',
+      'Draft inducer motor and draft pressure switch operational check',
+      'Visual heat exchanger inspection for cracks or rollout evidence',
+      'Blower capacitor and high-limit safety switch continuity testing',
+    ],
+    deepDive: {
+      title: 'Heating Safety & Troubleshooting Priorities',
+      overview:
+        'Heating equipment combines gas combustion with high-volume air movement. Safety controls must function perfectly:',
+      points: [
+        {
+          label: 'Heat Exchanger Integrity',
+          text: 'A cracked heat exchanger can leak carbon monoxide into your household air. We inspect heat exchangers for thermal stress cracks, rust perforations, and burner flame distortion.',
+        },
+        {
+          label: 'Limit Switch & Overheat Protection',
+          text: 'When airflow is choked by a dirty air filter, furnace temperatures spike. The high-limit switch trips to shut down gas flow and prevent a fire. We test switch operation and restore proper airflow.',
+        },
+      ],
+    },
     faqs: [
       {
-        question: 'My heat stopped working. What should I check first?',
+        question: 'Why is my heater blowing cold air?',
         answer:
-          'Confirm the thermostat is set to heat and the filter is not clogged. If the system still does not respond, call for service rather than repeatedly restarting it.',
+          'Common reasons include a dirty flame sensor failing to confirm flame, a tripped high-limit switch from a clogged filter, a failed hot surface ignitor, or a heat pump in defrost mode without auxiliary heat kicking in. Call us to test the ignition sequence.',
       },
       {
-        question: 'Is a burning smell from my heating system normal?',
+        question: 'Is a burning smell normal when the heat is turned on for the first time?',
         answer:
-          'A brief dust burn-off when the heat first starts can be normal. A persistent burning, rotten egg, or gas smell is not, and the system should be turned off and inspected promptly.',
+          'A mild burning dust smell that lasts 20-30 minutes during the first seasonal startup is normal as accumulated dust burns off heating elements. However, a persistent burning, plastic, or gas odor requires shutting the system down and scheduling an inspection immediately.',
       },
     ],
   },
   {
     slug: 'furnace-repair',
     name: 'Furnace Repair',
+    primaryKeyword: 'Furnace repair Lawrenceville GA',
+    secondaryKeywords: [
+      'Furnace not heating',
+      'Gas furnace troubleshooting',
+      'Furnace short-cycling',
+      'Electric furnace repair',
+    ],
+    seoTitle: 'Furnace Repair Lawrenceville GA | Budget Repair Solutions',
+    seoDescription:
+      'Expert furnace repair in Lawrenceville, GA for gas and electric systems. Burner, flame sensor, and blower motor diagnostics. Call (470) 331-4715.',
+    h1: 'Furnace Repair & Ignition Troubleshooting in Lawrenceville, GA',
     tags: ['heating'],
     icon: Flame,
     image: 'https://images.pexels.com/photos/3736108/pexels-photo-3736108.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     imageAlt: 'Technician working on a furnace unit',
     summary: 'Focused furnace diagnostics and repair for gas and electric furnaces.',
     intro:
-      'A furnace moves heat through the whole house, so a fault in the burner, blower, or controls is felt in every room. Furnace repair focuses on identifying the failed part, confirming that safety switches and venting are working, and restoring steady heat.',
-    problems: ['Furnace short-cycles or shuts off early', 'Blower runs but air is not warm', 'Error codes or a blinking control light'],
-    workIncluded: [
-      'Burner, igniter, and flame sensor service',
-      'Inducer and pressure switch testing',
-      'Blower wheel and motor inspection',
-      'Replacement of worn parts such as capacitors and relays',
+      'A gas or electric furnace delivers heat throughout your entire home through a sequence of automated safety checks. If any single component in that sequence fails—such as the inducer fan, the draft pressure switch, the hot surface ignitor, or the flame sensor—the control board locks the system out to prevent unburned gas accumulation. We specialize in diagnosing furnace control boards, burners, and airflow components.',
+    symptomsTitle: 'Furnace Symptoms Requiring Expert Attention',
+    problems: [
+      'Ignition problems: Hot surface ignitor does not glow or burner shuts off after 3-5 seconds',
+      'Dirty flame sensor lockouts: Furnace attempts to light three times and goes into hard lockout',
+      'Airflow and draft restrictions: Inducer motor hums loudly or draft pressure switch fails to close',
+      'Unusual furnace noises: Whistling, scraping, or screeching sounds from the blower wheel',
+      'Furnace short-cycling: Unit ignites, runs for 2 minutes, and shuts down on high-temperature limit',
+      'Blinking diagnostic LED codes: Control board flashes error codes indicating safety faults',
     ],
+    workIncludedTitle: 'Specialized Furnace Repair & Service Scope',
+    workIncluded: [
+      'Flame sensor cleaning and micro-amp flame signal measurement',
+      'Hot surface ignitor (HSI) resistance check and replacement',
+      'Inducer motor amp draw and negative draft pressure testing',
+      'Gas valve inlet and manifold pressure measurement',
+      'Blower wheel cleaning, motor capacitor testing, and belt check',
+      'Safety roll-out switch and primary high-limit switch verification',
+    ],
+    deepDive: {
+      title: 'Understanding the Furnace Ignition Sequence',
+      overview:
+        'When your thermostat calls for heat, your furnace must complete every step in order:',
+      points: [
+        {
+          label: '1. Draft Inducer Verification',
+          text: 'The inducer fan starts to clear residual gases from the heat exchanger. The pressure switch closes to prove chimney draft.',
+        },
+        {
+          label: '2. Ignitor & Gas Valve Activation',
+          text: 'The hot surface ignitor heats up to 2,000°F. The gas valve opens, allowing gas to ignite across the burners.',
+        },
+        {
+          label: '3. Flame Rectification',
+          text: 'The flame sensor detects micro-amps of electrical current through the flame. If no flame is confirmed within 4 seconds, the gas valve shuts immediately for safety.',
+        },
+      ],
+    },
     faqs: [
       {
-        question: 'Why does my furnace keep shutting off?',
+        question: 'Why does my furnace turn on, light for a few seconds, and then turn off?',
         answer:
-          'Short cycling is often caused by overheating from restricted airflow, a dirty flame sensor, or a faulty limit switch. Each has a different fix, so a technician should confirm the cause.',
+          'This is the classic symptom of a dirty or oxidized flame sensor. The furnace ignites successfully, but the control board cannot detect the flame signal and shuts off the gas to prevent gas buildup. Cleaning or replacing the flame sensor usually resolves this immediately.',
       },
       {
-        question: 'How do I know if my furnace is worth repairing?',
+        question: 'How do I read the flashing light code on my furnace?',
         answer:
-          'Factors include the furnace age, the cost of the repair, and how often it has been serviced. A technician can help you weigh repair against replacement.',
+          'Most modern furnaces have an LED indicator on the control board visible through a sight glass. The pattern of flashes (e.g. 3 red flashes = pressure switch open) corresponds to an error code chart on the inside of the furnace door. Our technicians decode this to pinpoint the exact failure.',
       },
     ],
   },
   {
     slug: 'furnace-installation',
     name: 'Furnace Installation',
+    primaryKeyword: 'Furnace installation Lawrenceville GA',
+    secondaryKeywords: [
+      'Furnace replacement Lawrenceville',
+      'New furnace install',
+      'Energy-efficient gas furnace',
+      'Furnace sizing Gwinnett',
+    ],
+    seoTitle: 'Furnace Installation Lawrenceville GA | Budget Repair Solutions',
+    seoDescription:
+      'Dependable furnace installation and replacement in Lawrenceville, GA. Properly sized heating units matched to your home. Call (470) 331-4715.',
+    h1: 'Furnace Installation & Replacement in Lawrenceville, GA',
     tags: ['heating'],
     icon: Flame,
     image: 'https://images.pexels.com/photos/34938439/pexels-photo-34938439.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     imageAlt: 'Technician installing a heating system in a workshop',
     summary: 'New furnace installation sized to your home and matched to your existing ductwork.',
     intro:
-      'Choosing a new furnace involves more than picking a brand. Capacity, fuel type, venting, and the existing ductwork all affect how well the furnace heats your home and how safely it operates. Installation is planned around those factors.',
-    problems: ['Furnace older than its expected service life', 'Uneven heating between floors or rooms', 'Repeated repairs on the same heating system'],
-    workIncluded: [
-      'Heat load review and furnace sizing',
-      'Removal and disposal of the old furnace',
-      'Gas, electrical, and venting connections',
-      'Startup testing for combustion and airflow',
+      'Installing a new furnace is about safety, efficiency, and comfort. Upgrading to a modern gas furnace not only lowers winter gas bills but also provides whisper-quiet variable-speed airflow and steady warmth. We size each unit based on your home’s heat loss calculations, ensuring the equipment matches existing gas lines, flue venting, and duct sizing.',
+    symptomsTitle: 'When to Replace Your Home’s Furnace',
+    problems: [
+      'Furnace is over 15-20 years old and nearing the end of safe operational life',
+      'Heat exchanger has developed cracks, rust holes, or dangerous rollout risk',
+      'Frequent winter repairs with parts becoming difficult or expensive to source',
+      'Uneven heating leaving certain rooms or second floors consistently chilly',
+      'Gas utility bills increasing without changes in winter weather or thermostat habits',
     ],
+    workIncludedTitle: 'Furnace Replacement & Installation Standards',
+    workIncluded: [
+      'Accurate heat load review and AFUE efficiency equipment selection',
+      'Safe removal and disposal of old furnace and venting',
+      'New gas piping, shutoff valve, and flexible sediment trap connection',
+      'Flue vent installation (metal B-vent or high-efficiency PVC condensing vent)',
+      'Plenum duct transition fabrication and airtight mastic sealing',
+      'Combustion analysis and carbon monoxide safety verification at startup',
+    ],
+    deepDive: {
+      title: 'AFUE Efficiency Ratings: 80% vs. 96% Condensing Furnaces',
+      overview:
+        'AFUE (Annual Fuel Utilization Efficiency) measures how much gas is converted into usable heat:',
+      points: [
+        {
+          label: '80% Standard Efficiency Furnaces',
+          text: 'Vented through standard metal B-vents, 80% AFUE furnaces vent 20% of heat energy outdoors. They are reliable, economical replacements for standard attic installations.',
+        },
+        {
+          label: '95-97% High-Efficiency Condensing Furnaces',
+          text: 'Features a secondary stainless steel heat exchanger that extracts additional heat from flue gases. Vents cool exhaust through PVC pipes, capturing almost all usable heat and lowering gas bills significantly.',
+        },
+      ],
+    },
     faqs: [
       {
-        question: 'What size furnace do I need?',
+        question: 'What size furnace does my Lawrenceville home need?',
         answer:
-          'Furnace size is based on how much heat your home loses, which depends on insulation, windows, and climate. Oversized furnaces cycle often and wear out sooner.',
+          'Furnace capacity is rated in BTUs. Oversized furnaces blast heat too quickly and short-cycle, causing hot and cold swings. Undersized units run continuously without reaching temperature. We calculate sizing based on square footage, insulation, and window area to install the right BTU capacity.',
       },
       {
-        question: 'Can a new furnace work with my existing ducts?',
+        question: 'How long does a gas furnace usually last?',
         answer:
-          'Often yes, provided the ducts are in good condition and sized correctly for the new equipment. A technician can check before any work begins.',
+          'With annual maintenance, a quality gas furnace typically lasts 15 to 20 years. When a furnace exceeds 15 years and requires major repairs (such as a blower motor or heat exchanger), replacement is usually the smarter long-term investment.',
       },
     ],
   },
   {
     slug: 'heat-pump-repair',
     name: 'Heat Pump Repair',
+    primaryKeyword: 'Heat pump repair Lawrenceville GA',
+    secondaryKeywords: [
+      'Heat pump not working',
+      'Heat pump defrost troubleshooting',
+      'Auxiliary heat running constantly',
+      'Heat pump not cooling or heating',
+    ],
+    seoTitle: 'Heat Pump Repair Lawrenceville GA | Budget Repair Solutions',
+    seoDescription:
+      'Year-round heat pump repair in Lawrenceville, GA. Fixing reversing valves, defrost controls, coils, and refrigerant issues. Call (470) 331-4715.',
+    h1: 'Heat Pump Repair & Dual-Season Service in Lawrenceville, GA',
     tags: ['cooling', 'heating'],
     icon: Gauge,
     image: 'https://images.pexels.com/photos/38067323/pexels-photo-38067323.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     imageAlt: 'Modern heat pump outdoor unit beside a contemporary building',
     summary: 'Repair for heat pumps that heat in winter and cool in summer.',
     intro:
-      'A heat pump moves heat in both directions, so it depends on its reversing valve, defrost cycle, and refrigerant balance to work in every season. When one of these fails, it can feel like heating or cooling is missing, even though the equipment is still running.',
-    problems: ['Heat pump runs but air feels cool in winter', 'Ice buildup on the outdoor unit', 'Auxiliary or emergency heat running too often'],
-    workIncluded: [
-      'Reversing valve and defrost control testing',
-      'Refrigerant pressure and charge checks',
-      'Outdoor coil and fan inspection',
-      'Electrical and control troubleshooting',
+      'A heat pump is a dual-season system: it cools your home in summer by extracting heat, and heats your home in winter by reversing the refrigerant flow to bring outdoor heat inside. Because it runs year-round, its reversing valve, defrost control board, and refrigerant balance must perform in every season. When a component fails, heating or cooling can stop working even if the outdoor fan is still spinning.',
+    symptomsTitle: 'Signs Your Heat Pump Requires Service',
+    problems: [
+      'Heat pump not heating or cooling: Unit runs but blows room-temperature air in both seasons',
+      'Reversing valve stuck: System remains stuck in cooling mode during winter or heating during summer',
+      'Heavy ice buildup on outdoor unit: Outdoor coil encased in solid ice that fails to melt during defrost',
+      'Auxiliary / Emergency heat running constantly: Electric heat strips stay engaged, causing electric bills to triple',
+      'Unusual clicking or hissing noises: Reversing valve solenoid leaking or compressor valve failure',
+      'Outdoor fan not spinning: Compressor runs but fan motor is seized or capacitor is blown',
     ],
+    workIncludedTitle: 'Heat Pump Diagnostic & Repair Scope',
+    workIncluded: [
+      'Reversing valve solenoid coil electrical test and mechanical slide operation check',
+      'Defrost control board, defrost thermostat, and sensor cycle verification',
+      'Dual-direction refrigerant pressure checks across cooling and heating modes',
+      'Auxiliary electric heat strip sequencer and limit switch testing',
+      'Outdoor condenser coil cleaning and defrost drain clearing',
+      'Thermostat heat pump configuration and emergency heat switch testing',
+    ],
+    deepDive: {
+      title: 'Reversing Valves, Defrost Cycles & Refrigerant Balancing',
+      overview:
+        'Heat pumps operate differently than standard air conditioners. Understanding their specialized mechanics is key:',
+      points: [
+        {
+          label: 'The 4-Way Reversing Valve',
+          text: 'This valve reverses the flow of refrigerant. When energized by the thermostat, a magnetic solenoid slides an internal spool to switch from cooling to heating. If the valve sticks, the system cannot switch seasons.',
+        },
+        {
+          label: 'The Winter Defrost Cycle',
+          text: 'In winter, the outdoor coil drops below freezing and accumulates frost. The defrost board temporarily switches the system back to AC mode to send hot gas into the outdoor coil, melting the ice in 5-10 minutes while electric heat strips keep indoor air warm.',
+        },
+        {
+          label: 'Auxiliary Heat Lockouts',
+          text: 'Auxiliary heat strips provide supplemental heat when outdoor temperatures drop below 35°F. If your heat pump has a refrigerant leak, it will rely entirely on auxiliary heat strips, spiking your electric bill.',
+        },
+      ],
+    },
     faqs: [
       {
-        question: 'Is some frost on my heat pump normal in winter?',
+        question: 'Why is there frost or ice on my outdoor heat pump in winter?',
         answer:
-          'Light frost that clears during the defrost cycle is normal. Heavy ice that does not melt, or ice that stays on the unit all day, indicates a problem that should be checked.',
+          'Light frost is normal during cold, damp winter mornings. The heat pump will automatically enter a defrost cycle every 30 to 90 minutes to melt the frost. However, if the unit is encased in a thick blanket of solid ice that does not melt, the defrost sensor, control board, or reversing valve has failed and needs immediate repair.',
       },
       {
-        question: 'Why does my heat pump use so much backup heat?',
+        question: 'Why does my heat pump blow cool air when it is on heat?',
         answer:
-          'Backup heat engages when the heat pump cannot keep up, often due to low refrigerant, a defrost fault, or a failing component. Diagnosis can confirm which one.',
+          'Heat pumps deliver warm air at roughly 90°F to 95°F, which is lower than a gas furnace (120°F+). While this air will comfortably warm your home, if the air feels distinctly cold (below 80°F), the unit may be low on refrigerant, have a stuck reversing valve, or have failed heat strips.',
+      },
+      {
+        question: 'What is the difference between Auxiliary Heat and Emergency Heat?',
+        answer:
+          'Auxiliary heat turns on automatically to supplement the heat pump on extremely cold nights. Emergency heat is a manual thermostat setting that shuts off the outdoor heat pump entirely and runs only the expensive electric heat strips—used only if the outdoor unit breaks down completely.',
       },
     ],
   },
   {
     slug: 'heat-pump-installation',
     name: 'Heat Pump Installation',
+    primaryKeyword: 'Heat pump installation Lawrenceville GA',
+    secondaryKeywords: [
+      'Heat pump replacement',
+      'Dual fuel HVAC installation',
+      'Energy-efficient heat pump upgrade',
+      'Year-round climate control',
+    ],
+    seoTitle: 'Heat Pump Installation Lawrenceville GA | Budget Repair Solutions',
+    seoDescription:
+      'Professional heat pump installation in Lawrenceville, GA. High-efficiency dual-season heating and cooling systems. Call (470) 331-4715.',
+    h1: 'Heat Pump Installation & Dual-Fuel Solutions in Lawrenceville, GA',
     tags: ['cooling', 'heating'],
     icon: Gauge,
     image: 'https://images.pexels.com/photos/20046692/pexels-photo-20046692.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     imageAlt: 'Outdoor air source unit mounted on a residential building',
     summary: 'Heat pump installation that provides both heating and cooling from one system.',
     intro:
-      'A heat pump can replace separate heating and cooling equipment in many homes, but it must be sized carefully for winter performance as well as summer cooling. Installation includes matching the indoor unit, outdoor unit, and controls so the system transitions smoothly between seasons.',
-    problems: ['Separate heating and cooling systems nearing replacement', 'Desire to reduce reliance on fossil fuel heating', 'Need for one system that handles both seasons'],
+      'Modern heat pumps represent the pinnacle of all-electric and dual-fuel climate control. Advanced inverter-driven compressors provide whisper-quiet cooling during humid Georgia summers and efficient, comfortable heating during winter. We size and install high-efficiency heat pumps engineered specifically for our Southeast climate.',
+    symptomsTitle: 'When to Upgrade to a Heat Pump',
+    problems: [
+      'Replacing separate, aging heating and cooling equipment with one unified system',
+      'Desire to eliminate reliance on fossil fuels or reduce winter heating costs',
+      'Current heat pump is 12-15+ years old and using expensive auxiliary heat constantly',
+      'Upgrading to high-efficiency inverter technology for whisper-quiet outdoor operation',
+    ],
+    workIncludedTitle: 'Heat Pump Installation & Configuration Scope',
     workIncluded: [
-      'Heating and cooling load review',
-      'Outdoor unit placement and mounting',
-      'Refrigerant line and electrical connections',
-      'Defrost, reversing, and control setup',
+      'Dual-season Manual J heating and cooling load calculation',
+      'Outdoor inverter heat pump placement on elevated snow/drain stand',
+      'Indoor air handler installation with matched auxiliary electric heat package',
+      'Refrigerant line set installation, nitrogen purge, and deep vacuum evacuation',
+      'Smart communicating heat pump thermostat setup and balance point calibration',
     ],
     faqs: [
       {
-        question: 'Can a heat pump handle very cold winters?',
+        question: 'Can a heat pump handle freezing Georgia winter weather?',
         answer:
-          'Modern heat pumps perform well in many climates, but the right model and backup heat setup depend on local conditions. Sizing should account for your typical winter temperatures.',
+          'Yes. Modern heat pumps operate efficiently down to 25°F or lower without losing heating capacity. For the rare occasions when Georgia temperatures drop below freezing, auxiliary electric heat strips or dual-fuel gas backups provide seamless supplemental heat.',
       },
       {
-        question: 'Will a heat pump lower my energy bills?',
+        question: 'What is a Dual-Fuel HVAC system?',
         answer:
-          'It can, especially when it replaces older, less efficient equipment. Actual savings vary with the home, the system, and how it is used.',
+          'A dual-fuel system pairs an electric heat pump with a high-efficiency gas furnace. The heat pump provides efficient heating and cooling for 85% of the year, while the gas furnace automatically takes over during sub-freezing winter snaps when gas heat is more cost-effective.',
       },
     ],
   },
   {
     slug: 'hvac-maintenance',
     name: 'HVAC Maintenance and Tune-Ups',
+    primaryKeyword: 'HVAC maintenance Lawrenceville GA',
+    secondaryKeywords: [
+      'Seasonal HVAC tune-up',
+      'AC maintenance Lawrenceville',
+      'Furnace tune-up Lawrenceville',
+      'Preventive heating and cooling service',
+    ],
+    seoTitle: 'HVAC Maintenance Lawrenceville GA | Seasonal Tune-Ups | Budget Repair',
+    seoDescription:
+      'Seasonal HVAC maintenance and tune-ups in Lawrenceville, GA. Coil cleaning, capacitor testing, and airflow checks to stop unexpected breakdowns. Call (470) 331-4715.',
+    h1: 'HVAC Maintenance & Seasonal Tune-Ups in Lawrenceville, GA',
     tags: ['cooling', 'heating'],
     icon: ClipboardCheck,
     image: 'https://images.pexels.com/photos/32497161/pexels-photo-32497161.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     imageAlt: 'Technician inspecting an outdoor HVAC unit during a maintenance visit',
     summary: 'Seasonal tune-ups that keep heating and cooling running efficiently and catch small problems early.',
     intro:
-      'Routine maintenance is the most effective way to prevent surprise breakdowns. A tune-up checks the parts that wear quietly over time, such as belts, coils, and electrical connections, and it helps the system run closer to its designed efficiency.',
-    problems: ['Dusty or dirty coils and blower components', 'Heating and cooling bills climbing without a clear reason', 'No service record for an aging system'],
+      'Routine maintenance is the single most effective way to prevent catastrophic summer AC breakdowns and unexpected winter heating failures. A comprehensive 21-point seasonal inspection identifies weakened capacitors, dirty coils, loose electrical connections, and clogged condensate lines before they cause major system shutdowns during 95°F heatwaves.',
+    symptomsTitle: 'Signs Your System Is Overdue for Maintenance',
+    problems: [
+      'Heating and cooling bills climbing month after month with no change in usage',
+      'Dust, pollen, and debris visibly coating the outdoor condenser coil fins',
+      'Airflow from vents feels weaker or takes longer to reach the set temperature',
+      'No maintenance inspection performed in the past 12 months',
+      'System squeaks, hums loudly, or vibrates noticeably during startup',
+    ],
+    workIncludedTitle: '21-Point Multi-Point Seasonal Inspection Checklist',
     workIncluded: [
-      'Seasonal inspection of heating and cooling',
-      'Coil, filter, and blower cleaning',
-      'Electrical connection and wear checks',
-      'Performance readings and a summary of findings',
+      'Precision capacitor testing against manufacturer microfarad tolerances',
+      'Outdoor condenser coil cleaning to remove dirt, pine needles, and pollen',
+      'Condensate drain line flush and algae tablet treatment to prevent pan overflows',
+      'Compressor contactor inspection for electrical pitting and insect intrusion',
+      'Blower wheel, motor amp draw, and air filter inspection',
+      'Refrigerant operating pressure review and temperature split measurement',
+      'Thermostat calibration and safety disconnect switch testing',
     ],
     faqs: [
       {
-        question: 'How often should my system be serviced?',
+        question: 'How often should my HVAC system receive maintenance?',
         answer:
-          'Many homes benefit from a tune-up before each heating and cooling season. Your system’s age and usage may call for a different schedule.',
+          'In Georgia, systems should be inspected twice a year: once in spring for the air conditioning system, and once in autumn for the heating system. This dual-season approach ensures equipment is prepped before peak weather.',
       },
       {
-        question: 'Does maintenance replace the need for repairs?',
+        question: 'Does preventive maintenance really lower electric bills?',
         answer:
-          'It reduces the likelihood of many common failures but cannot prevent every breakdown. It does make problems easier to spot before they become emergencies.',
+          'Yes. Dirty coils and low refrigerant force compressors to work 20% to 30% harder to transfer heat. Clean coils, lubricated motors, and correct refrigerant charges restore equipment to peak factory efficiency, saving noticeable dollars on monthly utility bills.',
       },
     ],
   },
   {
     slug: 'thermostat-installation',
     name: 'Thermostat Installation and Repair',
+    primaryKeyword: 'Thermostat installation Lawrenceville GA',
+    secondaryKeywords: [
+      'Smart thermostat installation',
+      'Thermostat troubleshooting',
+      'Digital thermostat wiring',
+      'Thermostat replacement Lawrenceville',
+    ],
+    seoTitle: 'Thermostat Installation Lawrenceville GA | Budget Repair Solutions',
+    seoDescription:
+      'Smart thermostat installation, setup, and repair in Lawrenceville, GA. Ensure precision temperature control and reliable HVAC communication. Call (470) 331-4715.',
+    h1: 'Thermostat Installation & Smart Climate Controls in Lawrenceville, GA',
     tags: ['cooling', 'heating'],
     icon: Gauge,
     image: 'https://images.pexels.com/photos/8293646/pexels-photo-8293646.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     imageAlt: 'Technician inspecting a vent and airflow in a building interior',
     summary: 'Thermostat installation and repair so your system responds to the temperatures you set.',
     intro:
-      'A thermostat is the control point for your entire system. When it reads temperatures incorrectly, loses power, or fails to call for heat or cooling, the equipment can run at the wrong times or not at all. Installation and repair ensure the thermostat and equipment communicate correctly.',
-    problems: ['Display is blank or unresponsive', 'Temperature reading is far from the actual room temperature', 'System does not respond to changes on the thermostat'],
+      'The thermostat is the brain of your heating and air conditioning system. When it reads temperatures incorrectly, loses power, or miscommunicates staging signals, your equipment short-cycles, runs inefficiently, or fails to start. We install and service smart thermostats (Google Nest, Ecobee, Honeywell Home) and ensure proper C-wire power delivery and staging control.',
+    symptomsTitle: 'Thermostat Problems We Troubleshoot',
+    problems: [
+      'Thermostat display is completely blank, unresponsive, or flashing low-battery',
+      'Temperature on the wall does not match the actual room temperature',
+      'System does not respond when switching between heating and cooling modes',
+      'Smart thermostat loses Wi-Fi connection or frequently reboots due to lack of a C-wire',
+      'Heat pump auxiliary heat turns on when standard cooling or mild heat is requested',
+    ],
+    workIncludedTitle: 'Thermostat Installation & Wiring Scope',
     workIncluded: [
-      'Thermostat installation and wiring checks',
-      'Replacement of faulty thermostats',
-      'Verification of heating and cooling calls',
-      'Setup and walkthrough of schedule and modes',
+      'Thermostat compatibility assessment (single-stage, multi-stage, heat pump, or dual-fuel)',
+      'Dedicated 24V common wire (C-wire) installation or power extender kit setup',
+      'Precision digital temperature sensor calibration and level wall mounting',
+      'Heating and cooling staging verification (Y1, Y2, W1, W2, O/B reversing valve)',
+      'Mobile app connectivity walkthrough and custom energy-saving schedule programming',
     ],
     faqs: [
       {
-        question: 'Can any thermostat work with my system?',
+        question: 'Why does a smart thermostat need a C-wire (Common Wire)?',
         answer:
-          'Not always. Thermostats must match the number of heating and cooling stages and the wiring present in the wall. A technician can confirm compatibility.',
+          'Smart thermostats with Wi-Fi screens require continuous 24-volt power. Without a dedicated C-wire, the thermostat tries to "power steal" from the heating or cooling circuits, which frequently causes reboots, short-cycling, or blown control board fuses. We can run a new C-wire or install an authorized power module.',
       },
       {
-        question: 'My thermostat is blank. Does that mean the system is broken?',
+        question: 'Can any smart thermostat work with my heat pump system?',
         answer:
-          'Not necessarily. The thermostat may have lost power or have dead batteries, but a wiring or transformer fault can also cause it. Diagnosis can identify the cause.',
+          'Most can, but the thermostat must support heat pump reversing valve logic (O/B terminal) and auxiliary/emergency heat staging. Incorrect configuration can cause heat pumps to blow freezing air in winter or auxiliary heat strips to run constantly.',
       },
     ],
   },
