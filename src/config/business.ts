@@ -3,8 +3,8 @@
 export const BUSINESS = {
   name: 'Budget Repair Solutions',
   category: 'HVAC Contractor',
-  phoneDisplay: '(470) 331-4715',
-  phoneTel: '+14703314715',
+  phoneDisplay: '(470) 348-6086',
+  phoneTel: '+14703486086',
   city: 'Lawrenceville',
   region: 'GA',
   regionName: 'Georgia',

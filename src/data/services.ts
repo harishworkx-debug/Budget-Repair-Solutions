@@ -72,7 +72,7 @@ export const SERVICES: Service[] = [
     ],
     seoTitle: 'AC Repair Lawrenceville GA | Budget Repair Solutions',
     seoDescription:
-      'AC not cooling, blowing warm air, or leaking? Call Budget Repair Solutions at (470) 331-4715 for reliable AC repair in Lawrenceville, GA. Direct technician support.',
+      'AC not cooling, blowing warm air, or leaking? Call Budget Repair Solutions at (470) 348-6086 for reliable AC repair in Lawrenceville, GA. Direct technician support.',
     h1: 'Air Conditioning Repair in Lawrenceville, GA',
     tags: ['cooling'],
     icon: Snowflake,
@@ -206,7 +206,7 @@ export const SERVICES: Service[] = [
     ],
     seoTitle: 'AC Installation Lawrenceville GA | Budget Repair Solutions',
     seoDescription:
-      'Properly sized air conditioning installation and HVAC replacement in Lawrenceville, GA. Call Budget Repair Solutions at (470) 331-4715 for an honest cooling consultation.',
+      'Properly sized air conditioning installation and HVAC replacement in Lawrenceville, GA. Call Budget Repair Solutions at (470) 348-6086 for an honest cooling consultation.',
     h1: 'Air Conditioning Installation in Lawrenceville, GA',
     tags: ['cooling'],
     icon: Wind,
@@ -331,7 +331,7 @@ export const SERVICES: Service[] = [
     ],
     seoTitle: 'HVAC Repair Lawrenceville GA | Budget Repair Solutions',
     seoDescription:
-      'Comprehensive HVAC repair in Lawrenceville, GA. Troubleshooting heating and cooling systems, airflow issues, and controls. Call (470) 331-4715.',
+      'Comprehensive HVAC repair in Lawrenceville, GA. Troubleshooting heating and cooling systems, airflow issues, and controls. Call (470) 348-6086.',
     h1: 'Professional HVAC Repair in Lawrenceville, GA',
     tags: ['cooling', 'heating'],
     icon: Wrench,
@@ -422,7 +422,7 @@ export const SERVICES: Service[] = [
     ],
     seoTitle: 'HVAC Installation Lawrenceville GA | Budget Repair Solutions',
     seoDescription:
-      'Complete HVAC installation and system replacement in Lawrenceville, GA. Matched heating and cooling units sized for comfort. Call (470) 331-4715.',
+      'Complete HVAC installation and system replacement in Lawrenceville, GA. Matched heating and cooling units sized for comfort. Call (470) 348-6086.',
     h1: 'HVAC Installation & System Replacement in Lawrenceville, GA',
     tags: ['cooling', 'heating'],
     icon: Thermometer,
@@ -473,7 +473,7 @@ export const SERVICES: Service[] = [
     ],
     seoTitle: 'Heating Repair Lawrenceville GA | Budget Repair Solutions',
     seoDescription:
-      'Fast heating repair in Lawrenceville, GA. We troubleshoot lukewarm air, failing ignitions, and strange noises. Call Budget Repair Solutions at (470) 331-4715.',
+      'Fast heating repair in Lawrenceville, GA. We troubleshoot lukewarm air, failing ignitions, and strange noises. Call Budget Repair Solutions at (470) 348-6086.',
     h1: 'Heating Repair & Emergency Heater Diagnostics in Lawrenceville, GA',
     tags: ['heating'],
     icon: Flame,
@@ -538,7 +538,7 @@ export const SERVICES: Service[] = [
     ],
     seoTitle: 'Furnace Repair Lawrenceville GA | Budget Repair Solutions',
     seoDescription:
-      'Expert furnace repair in Lawrenceville, GA for gas and electric systems. Burner, flame sensor, and blower motor diagnostics. Call (470) 331-4715.',
+      'Expert furnace repair in Lawrenceville, GA for gas and electric systems. Burner, flame sensor, and blower motor diagnostics. Call (470) 348-6086.',
     h1: 'Furnace Repair & Ignition Troubleshooting in Lawrenceville, GA',
     tags: ['heating'],
     icon: Flame,
@@ -609,7 +609,7 @@ export const SERVICES: Service[] = [
     ],
     seoTitle: 'Furnace Installation Lawrenceville GA | Budget Repair Solutions',
     seoDescription:
-      'Dependable furnace installation and replacement in Lawrenceville, GA. Properly sized heating units matched to your home. Call (470) 331-4715.',
+      'Dependable furnace installation and replacement in Lawrenceville, GA. Properly sized heating units matched to your home. Call (470) 348-6086.',
     h1: 'Furnace Installation & Replacement in Lawrenceville, GA',
     tags: ['heating'],
     icon: Flame,
@@ -675,7 +675,7 @@ export const SERVICES: Service[] = [
     ],
     seoTitle: 'Heat Pump Repair Lawrenceville GA | Budget Repair Solutions',
     seoDescription:
-      'Year-round heat pump repair in Lawrenceville, GA. Fixing reversing valves, defrost controls, coils, and refrigerant issues. Call (470) 331-4715.',
+      'Year-round heat pump repair in Lawrenceville, GA. Fixing reversing valves, defrost controls, coils, and refrigerant issues. Call (470) 348-6086.',
     h1: 'Heat Pump Repair & Dual-Season Service in Lawrenceville, GA',
     tags: ['cooling', 'heating'],
     icon: Gauge,
@@ -751,7 +751,7 @@ export const SERVICES: Service[] = [
     ],
     seoTitle: 'Heat Pump Installation Lawrenceville GA | Budget Repair Solutions',
     seoDescription:
-      'Professional heat pump installation in Lawrenceville, GA. High-efficiency dual-season heating and cooling systems. Call (470) 331-4715.',
+      'Professional heat pump installation in Lawrenceville, GA. High-efficiency dual-season heating and cooling systems. Call (470) 348-6086.',
     h1: 'Heat Pump Installation & Dual-Fuel Solutions in Lawrenceville, GA',
     tags: ['cooling', 'heating'],
     icon: Gauge,
@@ -800,7 +800,7 @@ export const SERVICES: Service[] = [
     ],
     seoTitle: 'HVAC Maintenance Lawrenceville GA | Seasonal Tune-Ups | Budget Repair',
     seoDescription:
-      'Seasonal HVAC maintenance and tune-ups in Lawrenceville, GA. Coil cleaning, capacitor testing, and airflow checks to stop unexpected breakdowns. Call (470) 331-4715.',
+      'Seasonal HVAC maintenance and tune-ups in Lawrenceville, GA. Coil cleaning, capacitor testing, and airflow checks to stop unexpected breakdowns. Call (470) 348-6086.',
     h1: 'HVAC Maintenance & Seasonal Tune-Ups in Lawrenceville, GA',
     tags: ['cooling', 'heating'],
     icon: ClipboardCheck,
@@ -852,7 +852,7 @@ export const SERVICES: Service[] = [
     ],
     seoTitle: 'Thermostat Installation Lawrenceville GA | Budget Repair Solutions',
     seoDescription:
-      'Smart thermostat installation, setup, and repair in Lawrenceville, GA. Ensure precision temperature control and reliable HVAC communication. Call (470) 331-4715.',
+      'Smart thermostat installation, setup, and repair in Lawrenceville, GA. Ensure precision temperature control and reliable HVAC communication. Call (470) 348-6086.',
     h1: 'Thermostat Installation & Smart Climate Controls in Lawrenceville, GA',
     tags: ['cooling', 'heating'],
     icon: Gauge,

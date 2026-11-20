@@ -42,7 +42,7 @@ export function AboutPage() {
     },
     {
       title: 'Direct Local Phone Communication',
-      body: 'When you call (470) 331-4715, you speak directly with our team. You get straightforward answers on technician availability and scheduling without automated call center runarounds.',
+      body: 'When you call (470) 348-6086, you speak directly with our team. You get straightforward answers on technician availability and scheduling without automated call center runarounds.',
     },
   ];
 

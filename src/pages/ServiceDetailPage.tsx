@@ -158,7 +158,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
             <p className="text-sm leading-relaxed text-slate-600">
               Speak directly with our team to discuss your system symptoms, confirm availability, and schedule diagnostic service across Lawrenceville.
             </p>
-            <PhoneButton label={`Call (470) 331-4715`} className="w-full" />
+            <PhoneButton label={`Call ${BUSINESS.phoneDisplay}`} className="w-full" />
             <p className="text-center text-xs text-slate-500">No automated call centers • Direct dispatch</p>
           </aside>
         </div>

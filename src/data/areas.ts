@@ -51,7 +51,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     seoTitle: 'AC Repair in Lawrenceville, GA | Budget Repair Solutions',
     seoDescription:
-      'Fast, dependable air conditioning repair in Lawrenceville, GA. Diagnosing refrigerant leaks, frozen coils, and failing capacitors. Call (470) 331-4715.',
+      'Fast, dependable air conditioning repair in Lawrenceville, GA. Diagnosing refrigerant leaks, frozen coils, and failing capacitors. Call (470) 348-6086.',
     h1: 'Air Conditioning Repair in Lawrenceville, GA',
     subheading:
       'Our primary home base. We provide prompt diagnosis and dependable cooling repairs for single-family homes, townhomes, and light commercial spaces across Lawrenceville.',
@@ -109,7 +109,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       travelRoute:
         'Immediate direct dispatch across Lawrenceville via GA-120, GA-20, US-29, and Sugarloaf Parkway.',
       bookingProcess:
-        'Call our office directly at (470) 331-4715. Speak with our team to describe your symptoms and confirm appointment scheduling.',
+        'Call our office directly at (470) 348-6086. Speak with our team to describe your symptoms and confirm appointment scheduling.',
       policyNote:
         'Verified central location. We never fabricate distant satellite offices—you receive genuine local service from technicians who know Gwinnett County.',
     },
@@ -124,7 +124,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       {
         question: 'Why is my Lawrenceville air conditioner running but not cooling?',
         answer:
-          'In Lawrenceville homes, common causes include a failing run capacitor that prevents the compressor from engaging, low refrigerant from a joint or coil leak, a heavily restricted air filter, or an iced-over evaporator coil. Turn the system off at the thermostat and call (470) 331-4715 for a diagnostic check.',
+          'In Lawrenceville homes, common causes include a failing run capacitor that prevents the compressor from engaging, low refrigerant from a joint or coil leak, a heavily restricted air filter, or an iced-over evaporator coil. Turn the system off at the thermostat and call (470) 348-6086 for a diagnostic check.',
       },
       {
         question: 'How fast can a technician arrive for AC repair in Lawrenceville?',
@@ -151,7 +151,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     seoTitle: 'AC Repair in Snellville, GA | Budget Repair Solutions',
     seoDescription:
-      'Looking for air conditioning repair in Snellville, GA? Budget Repair Solutions helps homeowners diagnose weak cooling, noisy units, and airflow problems. Call (470) 331-4715.',
+      'Looking for air conditioning repair in Snellville, GA? Budget Repair Solutions helps homeowners diagnose weak cooling, noisy units, and airflow problems. Call (470) 348-6086.',
     h1: 'Air Conditioning Repair in Snellville, GA',
     subheading:
       'Serving established residential neighborhoods and communities across Snellville with honest diagnostics, practical repair options, and reliable cooling restoration.',
@@ -209,7 +209,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       travelRoute:
         'Technicians travel south along GA-124 (Scenic Highway) directly into Snellville, covering neighborhoods off US-78, Dogwood Road, and Ronald Reagan Parkway.',
       bookingProcess:
-        'Call (470) 331-4715 directly. We confirm your street address, review system symptoms, and schedule a prompt appointment window.',
+        'Call (470) 348-6086 directly. We confirm your street address, review system symptoms, and schedule a prompt appointment window.',
       policyNote:
         'Transparent coverage policy: We do not claim a fabricated satellite office in Snellville. Our technicians genuinely dispatch from nearby Lawrenceville, keeping response times prompt and pricing competitive.',
     },
@@ -234,7 +234,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       {
         question: 'How do I schedule an AC repair visit in Snellville?',
         answer:
-          'Call our office directly at (470) 331-4715. You speak directly with our team to discuss your cooling issues and confirm appointment scheduling.',
+          'Call our office directly at (470) 348-6086. You speak directly with our team to discuss your cooling issues and confirm appointment scheduling.',
       },
     ],
   },
@@ -251,7 +251,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     seoTitle: 'AC Repair in Lilburn, GA | Budget Repair Solutions',
     seoDescription:
-      'Looking for air conditioning repair in Lilburn, GA? Budget Repair Solutions helps homeowners resolve weak cooling, clogged drains, and noisy AC units. Call (470) 331-4715.',
+      'Looking for air conditioning repair in Lilburn, GA? Budget Repair Solutions helps homeowners resolve weak cooling, clogged drains, and noisy AC units. Call (470) 348-6086.',
     h1: 'Air Conditioning Repair in Lilburn, GA',
     subheading:
       'Restoring cooling performance across Lilburn’s shaded neighborhoods, mature ranch properties, and historic community corridors with dependable diagnostics.',
@@ -309,7 +309,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       travelRoute:
         'Technicians travel southwest along US-29 (Lawrenceville Highway) directly into Lilburn, covering Arcado Road, Killian Hill Road, and Beaver Ruin corridors.',
       bookingProcess:
-        'Call (470) 331-4715. Speak directly with our dispatch team to book a convenient service window.',
+        'Call (470) 348-6086. Speak directly with our dispatch team to book a convenient service window.',
       policyNote:
         'Authentic local coverage. We do not maintain a fake storefront in Lilburn—we dispatch directly from Lawrenceville to provide honest, cost-effective service.',
     },
@@ -345,7 +345,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     seoTitle: 'AC Repair in Duluth, GA | Budget Repair Solutions',
     seoDescription:
-      'Looking for air conditioning repair in Duluth, GA? Budget Repair Solutions provides residential and commercial AC diagnostics for split systems and rooftop units. Call (470) 331-4715.',
+      'Looking for air conditioning repair in Duluth, GA? Budget Repair Solutions provides residential and commercial AC diagnostics for split systems and rooftop units. Call (470) 348-6086.',
     h1: 'Air Conditioning Repair in Duluth, GA',
     subheading:
       'Expert air conditioning repair for Duluth’s premier residential subdivisions and thriving commercial corridors along Peachtree Industrial and Pleasant Hill.',
@@ -403,7 +403,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       travelRoute:
         'Technicians travel west via GA-120 (Duluth Highway) or Pleasant Hill Road directly into Duluth corridors.',
       bookingProcess:
-        'Call (470) 331-4715 to schedule residential or light commercial cooling service.',
+        'Call (470) 348-6086 to schedule residential or light commercial cooling service.',
       policyNote:
         'Genuine local dispatch. We do not claim fictitious Duluth storefronts—we provide honest, responsive service from our Lawrenceville base.',
     },
@@ -417,7 +417,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       {
         question: 'Do you service commercial properties and offices in Duluth?',
         answer:
-          'Yes. We repair split systems and light commercial cooling equipment for retail stores, offices, medical practices, and churches across Duluth. Call (470) 331-4715 to describe your building and equipment.',
+          'Yes. We repair split systems and light commercial cooling equipment for retail stores, offices, medical practices, and churches across Duluth. Call (470) 348-6086 to describe your building and equipment.',
       },
       {
         question: 'Why does my Duluth smart thermostat show an error or blank screen?',
@@ -439,7 +439,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     seoTitle: 'AC Repair in Suwanee, GA | Budget Repair Solutions',
     seoDescription:
-      'Looking for air conditioning repair in Suwanee, GA? Budget Repair Solutions solves upstairs cooling failures, frozen coils, and multi-system problems. Call (470) 331-4715.',
+      'Looking for air conditioning repair in Suwanee, GA? Budget Repair Solutions solves upstairs cooling failures, frozen coils, and multi-system problems. Call (470) 348-6086.',
     h1: 'Air Conditioning Repair in Suwanee, GA',
     subheading:
       'Precision cooling diagnostics and repair tailored for Suwanee’s larger floor plans, multi-system residences, and family neighborhoods around Town Center.',
@@ -497,7 +497,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       travelRoute:
         'Technicians travel northwest via Lawrenceville-Suwanee Road and I-85 directly into Suwanee communities.',
       bookingProcess:
-        'Call (470) 331-4715 directly. We schedule appointments that can accommodate inspecting multiple systems.',
+        'Call (470) 348-6086 directly. We schedule appointments that can accommodate inspecting multiple systems.',
       policyNote:
         'Direct honest dispatch. We operate directly from central Gwinnett without inflating overhead or inventing fake neighborhood addresses.',
     },
@@ -533,7 +533,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     seoTitle: 'AC Repair in Loganville, GA | Budget Repair Solutions',
     seoDescription:
-      'Looking for air conditioning repair in Loganville, GA? Budget Repair Solutions provides dependable AC repairs, coil cleaning, and electrical troubleshooting. Call (470) 331-4715.',
+      'Looking for air conditioning repair in Loganville, GA? Budget Repair Solutions provides dependable AC repairs, coil cleaning, and electrical troubleshooting. Call (470) 348-6086.',
     h1: 'Air Conditioning Repair in Loganville, GA',
     subheading:
       'Providing dependable cooling repairs and practical HVAC solutions for homeowners and properties across Loganville and the Highway 78 corridor.',
@@ -591,7 +591,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       travelRoute:
         'Technicians travel southeast via GA-20 or GA-84 directly to the Highway 78 corridor.',
       bookingProcess:
-        'Call (470) 331-4715. We confirm your street address across Gwinnett or Walton County and schedule dispatch.',
+        'Call (470) 348-6086. We confirm your street address across Gwinnett or Walton County and schedule dispatch.',
       policyNote:
         'Transparent regional dispatch. We charge standard service rates with zero hidden travel surcharges for Loganville addresses.',
     },
@@ -627,7 +627,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     seoTitle: 'AC Repair in Grayson, GA | Budget Repair Solutions',
     seoDescription:
-      'Looking for air conditioning repair in Grayson, GA? Budget Repair Solutions provides prompt cooling diagnostics for heat pumps, warm vents, and noisy units. Call (470) 331-4715.',
+      'Looking for air conditioning repair in Grayson, GA? Budget Repair Solutions provides prompt cooling diagnostics for heat pumps, warm vents, and noisy units. Call (470) 348-6086.',
     h1: 'Air Conditioning Repair in Grayson, GA',
     subheading:
       'Fast, neighborhood-focused air conditioning service for Grayson homeowners, family communities, and properties around Tribble Mill and Grayson Park.',
@@ -685,7 +685,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       travelRoute:
         'Technicians travel southeast along GA-84 (Grayson Highway) directly into Grayson neighborhoods.',
       bookingProcess:
-        'Call (470) 331-4715. Because of our close proximity, we can frequently arrange rapid same-day dispatch.',
+        'Call (470) 348-6086. Because of our close proximity, we can frequently arrange rapid same-day dispatch.',
       policyNote:
         'True local service. We do not invent fake technicians stationed in Grayson—we are located just minutes away in Lawrenceville.',
     },
@@ -699,7 +699,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       {
         question: 'Why is ice forming on my Grayson air conditioner in the summer?',
         answer:
-          'Ice on copper lines or the indoor coil is almost always caused by restricted airflow (such as a dirty filter or blocked vents) or low refrigerant from a leak. When airflow drops or refrigerant leaks, coil temperatures drop below freezing, turning condensation into ice. Turn the system off and call (470) 331-4715.',
+          'Ice on copper lines or the indoor coil is almost always caused by restricted airflow (such as a dirty filter or blocked vents) or low refrigerant from a leak. When airflow drops or refrigerant leaks, coil temperatures drop below freezing, turning condensation into ice. Turn the system off and call (470) 348-6086.',
       },
       {
         question: 'How close is Budget Repair Solutions to Grayson?',
@@ -721,7 +721,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     seoTitle: 'AC Repair in Dacula, GA | Budget Repair Solutions',
     seoDescription:
-      'Looking for air conditioning repair in Dacula, GA? Budget Repair Solutions helps homeowners troubleshoot cooling problems across large lots and custom homes. Call (470) 331-4715.',
+      'Looking for air conditioning repair in Dacula, GA? Budget Repair Solutions helps homeowners troubleshoot cooling problems across large lots and custom homes. Call (470) 348-6086.',
     h1: 'Air Conditioning Repair in Dacula, GA',
     subheading:
       'Dependable air conditioning repairs engineered for Dacula’s expansive floor plans, larger lots, and high-heat attic ductwork installations.',
@@ -779,7 +779,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       travelRoute:
         'Technicians travel east along GA-316 or Winder Highway (US-29) directly into Dacula and Hamilton Mill neighborhoods.',
       bookingProcess:
-        'Call (470) 331-4715 to book an appointment with our Gwinnett dispatch team.',
+        'Call (470) 348-6086 to book an appointment with our Gwinnett dispatch team.',
       policyNote:
         'Honest local service. We do not claim a fabricated physical address in Dacula—our technicians dispatch promptly from our primary Lawrenceville shop.',
     },
@@ -815,7 +815,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     seoTitle: 'AC Repair in Norcross, GA | Budget Repair Solutions',
     seoDescription:
-      'Looking for air conditioning repair in Norcross, GA? Budget Repair Solutions provides cooling service for historic homes, townhomes, and commercial spaces. Call (470) 331-4715.',
+      'Looking for air conditioning repair in Norcross, GA? Budget Repair Solutions provides cooling service for historic homes, townhomes, and commercial spaces. Call (470) 348-6086.',
     h1: 'Air Conditioning Repair in Norcross, GA',
     subheading:
       'Providing specialized air conditioning diagnosis and repair for Historic Norcross homes, modern suburban subdivisions, and active commercial facilities.',
@@ -873,7 +873,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       travelRoute:
         'Technicians travel southwest via I-85 South or Buford Highway directly into Norcross.',
       bookingProcess:
-        'Call (470) 331-4715. Speak directly with our team to arrange prompt service.',
+        'Call (470) 348-6086. Speak directly with our team to arrange prompt service.',
       policyNote:
         'Authentic service coverage: We do not claim a physical satellite shop in Norcross—our team dispatches directly from our primary Lawrenceville location.',
     },
@@ -909,7 +909,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     seoTitle: 'AC Repair in Atlanta, GA | Budget Repair Solutions',
     seoDescription:
-      'Looking for air conditioning repair in Atlanta, GA? Budget Repair Solutions provides dependable cooling diagnostics along the I-85/I-285 corridor. Call (470) 331-4715.',
+      'Looking for air conditioning repair in Atlanta, GA? Budget Repair Solutions provides dependable cooling diagnostics along the I-85/I-285 corridor. Call (470) 348-6086.',
     h1: 'Air Conditioning Repair in Atlanta, GA',
     subheading:
       'Bringing dependable, transparent HVAC diagnostics and cooling repair from our Gwinnett base into northeast Atlanta, perimeter neighborhoods, and commercial properties.',
@@ -967,7 +967,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       travelRoute:
         'Targeted coverage focusing on Northeast Atlanta, Brookhaven, Chamblee, Dunwoody, Doraville, North Druid Hills, and Emory perimeter.',
       bookingProcess:
-        'Call (470) 331-4715 with your street address. We review route availability and schedule dispatch.',
+        'Call (470) 348-6086 with your street address. We review route availability and schedule dispatch.',
       policyNote:
         'Strict doorway transparency: We do not claim physical offices across Atlanta. We serve verified corridor addresses with honest, dependable dispatch from our Gwinnett base.',
     },
@@ -982,7 +982,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       {
         question: 'Which specific Atlanta neighborhoods and zip codes do you serve?',
         answer:
-          'From our Lawrenceville location, we primarily serve Northeast Atlanta and perimeter communities along the I-85 and I-285 corridors—including Brookhaven, Chamblee, Doraville, North Druid Hills, Dunwoody, and adjacent commercial districts. Because traffic and distance impact response times, we encourage you to call our office at (470) 331-4715 with your address to confirm immediate dispatch availability.',
+          'From our Lawrenceville location, we primarily serve Northeast Atlanta and perimeter communities along the I-85 and I-285 corridors—including Brookhaven, Chamblee, Doraville, North Druid Hills, Dunwoody, and adjacent commercial districts. Because traffic and distance impact response times, we encourage you to call our office at (470) 348-6086 with your address to confirm immediate dispatch availability.',
       },
       {
         question: 'Why should an Atlanta homeowner choose Budget Repair Solutions over large corporate chains?',

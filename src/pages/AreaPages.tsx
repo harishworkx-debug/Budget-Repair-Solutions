@@ -533,7 +533,7 @@ export function ServiceAreasPage() {
                 >
                   View Lawrenceville AC Repair <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
-                <PhoneButton label="Call (470) 331-4715" variant="secondary" />
+                <PhoneButton label={`Call ${BUSINESS.phoneDisplay}`} variant="secondary" />
               </div>
             </div>
           </div>

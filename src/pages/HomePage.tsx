@@ -276,7 +276,7 @@ function ServiceSpotlight({
 export function HomePage() {
   useSeo({
     title: `HVAC Repair & AC Services in Lawrenceville, GA | ${BUSINESS.name}`,
-    description: `Budget Repair Solutions provides heating and air conditioning services for homeowners in Lawrenceville, Georgia, and surrounding communities. Call (470) 331-4715.`,
+    description: `Budget Repair Solutions provides heating and air conditioning services for homeowners in Lawrenceville, Georgia, and surrounding communities. Call (470) 348-6086.`,
     path: '/',
     faqs: HOME_FAQS,
   });
