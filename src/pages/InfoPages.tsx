@@ -3,16 +3,13 @@ import {
   Clock,
   CheckCircle2,
   ExternalLink,
-  Mail,
   MapPin,
   MessageSquarePlus,
   Phone,
   Send,
-  ShieldCheck,
   Star,
-  Wrench,
 } from 'lucide-react';
-import { BUSINESS, locationLabel, telHref } from '@/config/business';
+import { BUSINESS, locationLabel } from '@/config/business';
 import { PageHeader } from '@/components/PageHeader';
 import { PhoneButton } from '@/components/PhoneButton';
 import { CallBand } from '@/components/CallBand';

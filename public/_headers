@@ -1,0 +1,18 @@
+# Cache static assets with unique hashes indefinitely
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache SVG, XML, TXT assets
+/favicon.svg
+  Cache-Control: public, max-age=86400
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+# Security and default caching headers for HTML & documents
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

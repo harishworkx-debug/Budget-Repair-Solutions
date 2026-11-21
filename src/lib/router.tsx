@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useEffect, useState, type AnchorHTMLAttributes, type MouseEvent } from 'react';
 
 const NAVIGATE_EVENT = 'app:navigate';

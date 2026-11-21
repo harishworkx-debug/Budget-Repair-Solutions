@@ -1,4 +1,4 @@
-import { CheckCircle2, AlertTriangle, ArrowRight, HelpCircle, ShieldAlert, Sparkles, MapPin } from 'lucide-react';
+import { CheckCircle2, AlertTriangle, ArrowRight, ShieldAlert, Sparkles, MapPin } from 'lucide-react';
 import { BUSINESS, locationLabel } from '@/config/business';
 import { PageHeader } from '@/components/PageHeader';
 import { PhoneButton } from '@/components/PhoneButton';

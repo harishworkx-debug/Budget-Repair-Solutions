@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Flame, MapPin, Snowflake, Wrench } from 'lucide-react';
+import { ArrowRight, Flame, MapPin, Snowflake, Wrench } from 'lucide-react';
 import { BUSINESS } from '@/config/business';
 import { PageHeader, type Crumb } from '@/components/PageHeader';
 import { PhoneButton } from '@/components/PhoneButton';
@@ -6,7 +6,6 @@ import { ServiceCard } from '@/components/ServiceCard';
 import { CallBand } from '@/components/CallBand';
 import { Link } from '@/lib/router';
 import { useSeo } from '@/lib/seo';
-import { SERVICE_AREAS } from '@/data/areas';
 import type { Service } from '@/data/services';
 
 interface ServiceListPageProps {

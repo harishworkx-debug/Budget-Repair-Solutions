@@ -8,7 +8,6 @@ import {
   MapPin,
   ShieldCheck,
   Star,
-  Wrench,
 } from 'lucide-react';
 import { BUSINESS } from '@/config/business';
 import { PageHeader } from '@/components/PageHeader';
